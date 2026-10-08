@@ -1,0 +1,624 @@
+{
+  "report_id": "CG-A055E7FAF2",
+  "analyzed_at": "2026-10-08T10:29:14+00:00",
+  "mode": "demo",
+  "mode_note": "DEMO: pre-authored demonstration output for a synthetic document, validated by the live pipeline. Not live AI analysis.",
+  "model_id": null,
+  "document_title": "Sahyog Digital Bank: Customer Privacy Notice (synthetic)",
+  "document_version": null,
+  "jurisdiction": "IN",
+  "supplied_context": {
+    "service_name": "Sahyog Digital Bank",
+    "service_category": "banking",
+    "jurisdiction": "IN",
+    "intended_feature": "savings account",
+    "completeness": "complete",
+    "permissions": [],
+    "consent_screen_text": null,
+    "policy_date_version": null
+  },
+  "completeness": "complete",
+  "extraction_warnings": [],
+  "overall_assessment": "clarification_needed",
+  "overall_assessment_label": "Clarification needed",
+  "overall_rationale": "No high-severity findings, but 3 medium-severity point(s) need clarification (F01, F02, F03).",
+  "plain_english_summary": {
+    "data_collected": [
+      {
+        "text": "Identity and KYC details: name, date of birth, address, PAN, photograph and identity documents.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P004"
+        ]
+      },
+      {
+        "text": "Transaction records.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P005"
+        ]
+      }
+    ],
+    "purposes": [
+      {
+        "text": "KYC checks that the bank says are required by law and banking regulations, and running the account you asked for.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P004"
+        ]
+      },
+      {
+        "text": "Fraud prevention and legal reporting.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P005"
+        ]
+      },
+      {
+        "text": "Offering you products from the bank and 'select partners', possibly based on your transaction patterns.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P007"
+        ]
+      }
+    ],
+    "recipients": [
+      {
+        "text": "Unnamed 'select partners' may receive 'relevant information' so that they can contact you with offers.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P007"
+        ]
+      }
+    ],
+    "retention": [
+      {
+        "text": "Account and KYC records are kept for periods required by law after closure. No retention is stated for marketing use.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P009"
+        ]
+      }
+    ],
+    "choices_and_withdrawal": [
+      {
+        "text": "A grievance contact is given. No way to refuse or withdraw from partner marketing is described.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P011"
+        ]
+      }
+    ],
+    "unknowns": [
+      "Who the 'select partners' are and what 'relevant information' includes.",
+      "Whether partner marketing is optional and how to opt out.",
+      "How long data used for marketing is kept."
+    ]
+  },
+  "data_inventory": [
+    {
+      "data_category": "KYC data (name, date of birth, address, PAN, photograph, ID documents)",
+      "collection_basis": "stated",
+      "purpose": "KYC and account services",
+      "recipients": null,
+      "retention": "Periods required by law after account closure",
+      "evidence_ids": [
+        "P004",
+        "P009"
+      ]
+    },
+    {
+      "data_category": "Transaction records and patterns",
+      "collection_basis": "stated",
+      "purpose": "Run account, prevent fraud, legal reporting; also product offers",
+      "recipients": "Select partners (relevant information)",
+      "retention": "Periods required by law (for account records)",
+      "evidence_ids": [
+        "P005",
+        "P007",
+        "P009"
+      ]
+    }
+  ],
+  "permission_purpose_map": [],
+  "consent_dimensions": [
+    {
+      "dimension_id": "purpose_clarity",
+      "status": "concern",
+      "explanation": "Account purposes are clear; the marketing purpose ('suitable offers', 'relevant information') is vague.",
+      "evidence_ids": [
+        "P004",
+        "P007"
+      ]
+    },
+    {
+      "dimension_id": "optional_separation",
+      "status": "concern",
+      "explanation": "Partner marketing appears in the same notice as essential account processing, and the text does not say it is optional.",
+      "evidence_ids": [
+        "P007"
+      ]
+    },
+    {
+      "dimension_id": "choice_granularity",
+      "status": "unknown",
+      "explanation": "No separate choices are described in the notice; the account-opening screen was not supplied.",
+      "evidence_ids": []
+    },
+    {
+      "dimension_id": "affirmative_action",
+      "status": "unknown",
+      "explanation": "Cannot be assessed from the notice alone.",
+      "evidence_ids": []
+    },
+    {
+      "dimension_id": "withdrawal",
+      "status": "concern",
+      "explanation": "Only a grievance contact is given; no withdrawal or opt-out route for marketing is described.",
+      "evidence_ids": [
+        "P011"
+      ]
+    },
+    {
+      "dimension_id": "recipient_retention_transparency",
+      "status": "concern",
+      "explanation": "Partners are unnamed. Retention is tied to legal periods for account records but not stated for marketing.",
+      "evidence_ids": [
+        "P007",
+        "P009"
+      ]
+    },
+    {
+      "dimension_id": "bundling_or_misleading",
+      "status": "unknown",
+      "explanation": "The text does not show whether marketing is a condition of opening an account.",
+      "evidence_ids": []
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "F01",
+      "rule_id": "CG-SH-02",
+      "rule_version": "1.0",
+      "title": "Partner marketing recipients and data are vague",
+      "severity": "medium",
+      "confidence": "high",
+      "explanation": "'Select partners' and 'relevant information' do not tell you who receives your data or what is shared, even though transaction patterns may be used.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P007"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P007",
+          "quote": "may share relevant information with such partners to enable them to contact you with suitable offers",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S11"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "A list of partner categories",
+        "Whether this sharing is optional"
+      ],
+      "recommended_action": "Ask the bank which partners receive which information, and whether you can open and use the account without partner marketing.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F02",
+      "rule_id": "CG-CN-02",
+      "rule_version": "1.0",
+      "title": "No opt-out or withdrawal route for marketing described",
+      "severity": "medium",
+      "confidence": "medium",
+      "explanation": "The complete notice gives a grievance contact but no way to say no to, or withdraw from, partner marketing.",
+      "evidence_basis": "absence_in_supplied_text",
+      "document_evidence_ids": [],
+      "quotes": [],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S6",
+        "LS-IN-DPDP-RULE3"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "Net-banking or app settings may offer an opt-out not mentioned here"
+      ],
+      "recommended_action": "Look in net-banking or app settings for marketing preferences; otherwise ask the grievance officer how to opt out.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F03",
+      "rule_id": "CG-PP-04",
+      "rule_version": "1.0",
+      "title": "Marketing use of transaction patterns is loosely described",
+      "severity": "medium",
+      "confidence": "medium",
+      "explanation": "Using transaction patterns for offers goes beyond running the account, and 'suitable offers' does not explain what analysis is done.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P007"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P007",
+          "quote": "including your transaction patterns, to offer you products from Sahyog and our select partners",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S5",
+        "LS-IN-DPDP-RULE3"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "The account-opening consent screen"
+      ],
+      "recommended_action": "Ask whether your transaction patterns are used for offers only with your separate agreement.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F04",
+      "rule_id": "CG-LG-01",
+      "rule_version": "1.0",
+      "title": "KYC and account processing are described as legally required",
+      "severity": "informational",
+      "confidence": "high",
+      "explanation": "The bank says KYC data is needed for checks required by law and to run the account you asked for. Processing of this kind may not depend on your consent, so declining marketing would not normally stop it.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P004",
+        "P005"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P004",
+          "quote": "Know Your Customer (KYC) checks required by law and banking regulations",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S4",
+        "LS-IN-DPDPA-S7"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [],
+      "recommended_action": "Expect KYC processing if you open the account; ask the bank which processing depends on your consent.",
+      "adjustments": []
+    }
+  ],
+  "targeted_questions": [
+    {
+      "question": "Is partner marketing optional, and can I open the account without agreeing to it?",
+      "why_it_matters": "Separates essential banking from optional marketing."
+    },
+    {
+      "question": "Which partners receive my information, and what exactly is shared?",
+      "why_it_matters": "Transaction patterns can reveal a lot about your life."
+    },
+    {
+      "question": "How do I opt out of marketing and partner sharing later?",
+      "why_it_matters": "Withdrawal should be possible without closing the account."
+    }
+  ],
+  "next_steps": [
+    {
+      "action": "Do not expect to avoid KYC processing; it is described as legally required.",
+      "conditional": false
+    },
+    {
+      "action": "If the account form or app offers a marketing or partner-sharing choice, decline it unless you want partner offers.",
+      "conditional": true
+    },
+    {
+      "action": "Ask the bank which partners receive which information, and whether you can open and use the account without partner marketing.",
+      "conditional": true
+    },
+    {
+      "action": "Look in net-banking or app settings for marketing preferences; otherwise ask the grievance officer how to opt out.",
+      "conditional": true
+    },
+    {
+      "action": "Ask whether your transaction patterns are used for offers only with your separate agreement.",
+      "conditional": true
+    },
+    {
+      "action": "If you need a legal determination, ask a qualified privacy or legal professional; ConsentGuard does not provide one.",
+      "conditional": false
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "P001",
+      "text": "Sahyog Digital Bank: Customer Privacy Notice",
+      "page": null,
+      "paragraph_index": 1,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P002",
+      "text": "SYNTHETIC DEMONSTRATION DOCUMENT: Sahyog Digital Bank is a fictional bank invented for ConsentGuard demos. This is not a real policy.",
+      "page": null,
+      "paragraph_index": 2,
+      "section": "Sahyog Digital Bank: Customer Privacy Notice",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P003",
+      "text": "Information needed to open and run your account",
+      "page": null,
+      "paragraph_index": 3,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P004",
+      "text": "To open and operate your savings account we collect your name, date of birth, address, PAN, photograph and identity documents. This information is required to complete Know Your Customer (KYC) checks required by law and banking regulations, and to provide the account services you request.",
+      "page": null,
+      "paragraph_index": 4,
+      "section": "Information needed to open and run your account",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P005",
+      "text": "We process your transaction records to run your account, prevent fraud and meet our legal reporting duties.",
+      "page": null,
+      "paragraph_index": 5,
+      "section": "Information needed to open and run your account",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P006",
+      "text": "Marketing and partners",
+      "page": null,
+      "paragraph_index": 6,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P007",
+      "text": "We may also use your information, including your transaction patterns, to offer you products from Sahyog and our select partners, and may share relevant information with such partners to enable them to contact you with suitable offers.",
+      "page": null,
+      "paragraph_index": 7,
+      "section": "Marketing and partners",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P008",
+      "text": "Retention",
+      "page": null,
+      "paragraph_index": 8,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P009",
+      "text": "We retain account and KYC records for the periods required by applicable law after your account is closed.",
+      "page": null,
+      "paragraph_index": 9,
+      "section": "Retention",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P010",
+      "text": "Your choices",
+      "page": null,
+      "paragraph_index": 10,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P011",
+      "text": "You can contact our Grievance Redressal Officer at grievance@sahyogbank.example for any privacy concern.",
+      "page": null,
+      "paragraph_index": 11,
+      "section": "Your choices",
+      "source": "document"
+    }
+  ],
+  "legal_sources": [
+    {
+      "source_id": "LS-IN-DPDPA-COMMENCE",
+      "jurisdiction": "IN",
+      "source_type": "gazette_notification",
+      "title": "Notification G.S.R. 843(E) appointing commencement dates for the Digital Personal Data Protection Act, 2023",
+      "issuing_authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "official_url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+      "provision": "Paragraphs (a)-(c): phased commencement",
+      "publication_date": "2025-11-13",
+      "effective_date": "2025-11-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "On publication: s.1(2), s.2, ss.18-26, s.35, ss.38-43, s.44(1) and (3). One year after publication: s.6(9) and s.27(1)(d). Eighteen months after publication: ss.3-5, s.6(1)-(8) and (10), ss.7-17, s.27 (except (1)(d)), ss.28-34, 36, 37 and s.44(2).",
+      "applicability_notes": "Controls which DPDP Act duties are in force on a given date."
+    },
+    {
+      "source_id": "LS-IN-DPDP-RULE3",
+      "jurisdiction": "IN",
+      "source_type": "rules",
+      "title": "Digital Personal Data Protection Rules, 2025, rule 3 - Notice given by Data Fiduciary",
+      "issuing_authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "official_url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+      "provision": "Rule 3",
+      "publication_date": "2025-11-13",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "The notice must be understandable independently of other information; give in clear and plain language an itemised description of personal data and the specified purpose(s); and give a link and other means to withdraw consent with ease comparable to giving it, exercise rights, and complain to the Board.",
+      "applicability_notes": "Commences eighteen months after publication of the Rules."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S11",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 11 - Right to access information",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 11(1)",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "A Data Principal who gave consent may request a summary of personal data processed and the identities of other Data Fiduciaries and Data Processors with whom it was shared.",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E)."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S4",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023 (No. 22 of 2023), section 4 - Grounds for processing personal data",
+      "issuing_authority": "Parliament of India; published by the Ministry of Law and Justice (Legislative Department); text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 4",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "Personal data may be processed for a lawful purpose either with the Data Principal's consent or for 'certain legitimate uses' (section 7). Consent is therefore not the only ground.",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E). Use to explain that not all processing depends on consent."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S5",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 5 - Notice",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 5",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "A consent request must be accompanied or preceded by a notice describing the personal data and purpose, how to exercise withdrawal and grievance rights, and how to complain to the Board; option to access the notice in English or an Eighth Schedule language.",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E). Applies to consent requests, not to processing on other grounds."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S6",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 6 - Consent",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 6(1)-(8) and (10)",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "Consent must be free, specific, informed, unconditional and unambiguous with a clear affirmative action, limited to data necessary for the specified purpose (6(1)); illustration: contact-list access is not necessary for a telemedicine service. Withdrawal must be comparable in ease to giving consent (6(4)).",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E). Relevant only where consent is the basis of processing."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S7",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 7 - Certain legitimate uses",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 7",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "Lists uses for which processing may occur without consent, including where a person voluntarily provides data for a specified purpose and has not objected (7(a)), and other listed situations.",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E). ConsentGuard does not decide whether a specific use qualifies."
+    }
+  ],
+  "last_verification_date": "2026-10-08",
+  "rule_set_version": "1.0.0",
+  "limitations": [
+    "ConsentGuard explains and assesses the supplied text only. It does not know whether the organisation actually follows its policy.",
+    "This is a consumer-education prototype, not legal advice, a compliance certification, or a security scan.",
+    "Severity and confidence labels are prototype governance heuristics, not statutory classifications.",
+    "A privacy notice alone cannot show how a consent screen behaves (for example, whether boxes are pre-ticked).",
+    "Legal sources are limited to the India registry verified on the date shown; laws and commencement dates can change.",
+    "No consent-screen text was supplied, so interface behaviour was not assessed."
+  ],
+  "skills_run": [
+    {
+      "skill": "document-intake",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "11 paragraphs; parse quality good."
+    },
+    {
+      "skill": "evidence-extraction",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "plain-language-explanation",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "purpose-proportionality",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "consent-design-review",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "user-action-plan",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "jurisdiction-check",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "Legal sources attached from registry only."
+    },
+    {
+      "skill": "findings-prioritization",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "0 finding(s) adjusted by rule caps."
+    },
+    {
+      "skill": "report-and-qa",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "3 validation check(s) recorded."
+    }
+  ],
+  "validation": [
+    {
+      "check": "all finding evidence IDs exist",
+      "passed": true,
+      "detail": "4 reference(s) checked."
+    },
+    {
+      "check": "all retained quotes verified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "legal sources come from registry",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "document_title": "Northfield Institute of Management: Student Registration Data Declaration (synthetic)",
+  "document_version": null,
+  "plain_english_summary": {
+    "data_collected": [
+      {"text": "Name, date of birth, contact details, previous academic records, category certificate (if applicable) and a photograph.", "basis": "stated", "evidence_ids": ["P004"]},
+      {"text": "Video recordings of campus events are mentioned in the declaration, although they are not listed as collected data.", "basis": "stated", "evidence_ids": ["P008"]}
+    ],
+    "purposes": [
+      {"text": "Admission, academic records, examinations and certificates.", "basis": "stated", "evidence_ids": ["P006"]},
+      {"text": "Publicity: your name, photograph and event videos in brochures, social media posts and advertising campaigns.", "basis": "stated", "evidence_ids": ["P008"]}
+    ],
+    "recipients": [
+      {"text": "No recipients are named. Publicity use means the public will see your name and image.", "basis": "inferred", "evidence_ids": ["P008"]}
+    ],
+    "retention": [],
+    "choices_and_withdrawal": [
+      {"text": "One signature covers both enrollment and publicity, and signing is mandatory to register.", "basis": "stated", "evidence_ids": ["P008", "P009"]}
+    ],
+    "unknowns": [
+      "How long records and publicity material are kept.",
+      "Whether you can later withdraw from publicity use.",
+      "Who to contact with privacy questions."
+    ]
+  },
+  "data_inventory": [
+    {"data_category": "Enrollment data (name, date of birth, contact, academic records, category certificate, photograph)", "collection_basis": "stated", "purpose": "Admission and academic administration", "recipients": null, "retention": null, "evidence_ids": ["P004", "P006"]},
+    {"data_category": "Name, photograph, event video recordings", "collection_basis": "stated", "purpose": "Brochures, social media and advertising", "recipients": "Public (via publicity)", "retention": null, "evidence_ids": ["P008"]}
+  ],
+  "permission_purpose_map": [],
+  "consent_dimensions": [
+    {"dimension_id": "purpose_clarity", "status": "adequate", "explanation": "Both the enrollment and publicity purposes are stated specifically.", "evidence_ids": ["P006", "P008"]},
+    {"dimension_id": "optional_separation", "status": "concern", "explanation": "Publicity use is combined with enrollment in one declaration.", "evidence_ids": ["P008"]},
+    {"dimension_id": "choice_granularity", "status": "concern", "explanation": "There is a single signature and no separate box or choice for publicity.", "evidence_ids": ["P008", "P010"]},
+    {"dimension_id": "affirmative_action", "status": "adequate", "explanation": "The form asks for a signature, which is a clear action. The problem is what the signature is bundled with.", "evidence_ids": ["P008", "P010"]},
+    {"dimension_id": "withdrawal", "status": "unknown", "explanation": "The form does not mention withdrawal.", "evidence_ids": []},
+    {"dimension_id": "recipient_retention_transparency", "status": "concern", "explanation": "No retention periods are given, and no recipients beyond publicity channels are named.", "evidence_ids": ["P008"]},
+    {"dimension_id": "bundling_or_misleading", "status": "concern", "explanation": "Optional publicity is made a condition of mandatory registration.", "evidence_ids": ["P008", "P009"]}
+  ],
+  "findings": [
+    {"rule_id": "CG-CN-01", "severity": "high", "confidence": "high", "title": "Publicity use bundled with mandatory registration", "explanation": "Advertising use of your name, photograph and videos is not needed to enroll, yet it sits in the same declaration that you must sign to register. You cannot agree to enrollment without also agreeing to publicity.", "evidence_ids": ["P008", "P009"], "quotes": [{"evidence_id": "P008", "quote": "using my name, photograph and video recordings of campus events in brochures, social media posts and advertising campaigns"}, {"evidence_id": "P009", "quote": "Signing this declaration is mandatory to complete registration."}], "missing_context": ["Whether the Institute offers a separate opt-out form"], "recommended_action": "Ask the admissions office for a separate publicity choice, or whether you can strike out the publicity part and still register. Keep a copy of anything you sign."},
+    {"rule_id": "CG-CN-02", "severity": "medium", "confidence": "medium", "title": "No way to withdraw from publicity described", "explanation": "The form does not say how to withdraw consent to publicity after signing.", "evidence_ids": [], "quotes": [], "missing_context": ["A separate institute privacy policy may cover this"], "recommended_action": "Ask how you can withdraw from publicity use later, and how material already published is handled."},
+    {"rule_id": "CG-RT-01", "severity": "medium", "confidence": "medium", "title": "Retention not stated", "explanation": "The form does not say how long enrollment records or publicity images are kept.", "evidence_ids": [], "quotes": [], "missing_context": ["A separate institute privacy policy"], "recommended_action": "Ask how long your records and any publicity images are kept."},
+    {"rule_id": "CG-TR-01", "severity": "low", "confidence": "medium", "title": "No privacy contact given", "explanation": "The form names no person or office for privacy questions or complaints.", "evidence_ids": [], "quotes": [], "missing_context": [], "recommended_action": "Ask the Institute for its privacy or grievance contact."}
+  ],
+  "targeted_questions": [
+    {"question": "Can I register without agreeing to the use of my photo and videos in advertising?", "why_it_matters": "Enrollment should not depend on optional publicity."},
+    {"question": "How can I withdraw from publicity later?", "why_it_matters": "Images on social media can be hard to remove once published."}
+  ],
+  "next_steps": [
+    {"action": "Before signing, ask for a separate publicity choice in writing.", "conditional": false},
+    {"action": "If the Institute offers a publicity opt-out form, consider using it.", "conditional": true}
+  ]
+}

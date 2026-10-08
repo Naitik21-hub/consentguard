@@ -1,0 +1,59 @@
+{
+  "note": "Human-authored expectations for each synthetic scenario. tests/test_scenarios.py checks the pipeline output against these. Analysis date for tests: 2026-10-08.",
+  "scenarios": {
+    "01_delivery_overreach": {
+      "overall": "substantial_concerns",
+      "must_include_rules": ["CG-PP-02", "CG-PP-03", "CG-SH-01", "CG-PP-04", "CG-RT-02", "CG-CN-03"],
+      "must_not_include_rules": ["CG-RT-01"],
+      "permission_assessments": {"Microphone": "disproportionate", "Contacts": "disproportionate"},
+      "why": "Unrelated access is mandatory, background location is weakly explained, and partner marketing has no choice."
+    },
+    "02_video_call_separate_marketing": {
+      "overall": "no_major_concerns",
+      "must_include_rules": ["CG-CN-04"],
+      "must_not_include_rules": ["CG-PP-01", "CG-PP-02", "CG-SH-01", "CG-CN-01"],
+      "permission_assessments": {"Microphone": "proportionate", "Camera": "proportionate"},
+      "why": "Microphone/camera fit calling; marketing is separate and optional."
+    },
+    "03_bank_partner_marketing": {
+      "overall": "clarification_needed",
+      "must_include_rules": ["CG-LG-01", "CG-SH-02"],
+      "must_not_include_rules": ["CG-CN-01"],
+      "lg01_max_severity": "informational",
+      "why": "KYC is described as legally required (not a consent issue); partner marketing is vague."
+    },
+    "04_university_bundled_publicity": {
+      "overall": "substantial_concerns",
+      "must_include_rules": ["CG-CN-01"],
+      "must_not_include_rules": [],
+      "why": "Optional publicity is bundled into mandatory registration."
+    },
+    "05_fitness_health_sharing": {
+      "overall": "substantial_concerns",
+      "must_include_rules": ["CG-SH-01", "CG-SN-01"],
+      "must_not_include_rules": [],
+      "sn01_must_mention": "does not decide how the law classifies",
+      "why": "Health data goes to insurers with no separate choice; sensitivity is flagged without a legal classification."
+    },
+    "06_short_excerpt": {
+      "overall": "insufficient_information",
+      "must_include_rules": ["CG-RT-01", "CG-CN-02", "CG-SC-01"],
+      "must_not_include_rules": [],
+      "absence_findings_max_severity": "low",
+      "absence_findings_max_confidence": "low",
+      "why": "Excerpt only: absent details are weighted down, not treated as wrongdoing."
+    },
+    "07_prompt_injection": {
+      "overall": "clarification_needed",
+      "must_include_rules": ["CG-IN-01", "CG-PP-04"],
+      "must_not_include_rules": [],
+      "why": "Injection is flagged and ignored; ordinary vague-purpose issues remain."
+    },
+    "08_well_explained": {
+      "overall": "no_major_concerns",
+      "must_include_rules": ["CG-PO-01", "CG-CN-04"],
+      "must_not_include_rules": ["CG-PP-01", "CG-PP-02", "CG-SH-01", "CG-CN-01", "CG-RT-01", "CG-CN-02"],
+      "why": "Limited data, clear choices, stated retention and withdrawal."
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "skill": {
+      "title": "Skill",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "success",
+        "failed",
+        "skipped"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "executor": {
+      "enum": [
+        "code",
+        "model",
+        "fixture"
+      ],
+      "title": "Executor",
+      "type": "string"
+    },
+    "note": {
+      "default": "",
+      "title": "Note",
+      "type": "string"
+    }
+  },
+  "required": [
+    "skill",
+    "version",
+    "status",
+    "executor"
+  ],
+  "title": "SkillRun",
+  "type": "object"
+}

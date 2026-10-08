@@ -1,0 +1,65 @@
+{
+  "note": "All scenarios are synthetic. Organisations, emails and details are invented. Fixture drafts in expected_outputs/*.draft.json are pre-authored demonstrations of the model-output contract, not live AI output.",
+  "scenarios": [
+    {
+      "id": "01_delivery_overreach",
+      "title": "1. Delivery app: mandatory background location, contacts, microphone",
+      "policy_file": "synthetic_policies/01_delivery_overreach.md",
+      "context": {"service_name": "QuickBasket", "service_category": "grocery delivery", "jurisdiction": "IN", "intended_feature": "home delivery of groceries", "completeness": "complete",
+        "permissions": [{"name": "Precise location (always)", "status": "required"}, {"name": "Contacts", "status": "required"}, {"name": "Microphone", "status": "required"}],
+        "consent_screen_text": null, "policy_date_version": "Synthetic v1 (2026)"}
+    },
+    {
+      "id": "02_video_call_separate_marketing",
+      "title": "2. Video-calling app: mic/camera for calls, separate optional marketing",
+      "policy_file": "synthetic_policies/02_video_call_separate_marketing.md",
+      "context": {"service_name": "MeetLoop", "service_category": "video calling", "jurisdiction": "IN", "intended_feature": "video calls", "completeness": "complete",
+        "permissions": [{"name": "Microphone", "status": "required"}, {"name": "Camera", "status": "required"}],
+        "consent_screen_text": null, "policy_date_version": "Synthetic v1 (2026)"}
+    },
+    {
+      "id": "03_bank_partner_marketing",
+      "title": "3. Bank notice: account processing vs vague partner marketing",
+      "policy_file": "synthetic_policies/03_bank_partner_marketing.md",
+      "context": {"service_name": "Sahyog Digital Bank", "service_category": "banking", "jurisdiction": "IN", "intended_feature": "savings account", "completeness": "complete",
+        "permissions": [], "consent_screen_text": null, "policy_date_version": null}
+    },
+    {
+      "id": "04_university_bundled_publicity",
+      "title": "4. University registration: enrollment bundled with publicity",
+      "policy_file": "synthetic_policies/04_university_bundled_publicity.md",
+      "context": {"service_name": "Northfield Institute of Management", "service_category": "education", "jurisdiction": "IN", "intended_feature": "student registration", "completeness": "complete",
+        "permissions": [], "consent_screen_text": null, "policy_date_version": null}
+    },
+    {
+      "id": "05_fitness_health_sharing",
+      "title": "5. Fitness app: health data shared with insurers",
+      "policy_file": "synthetic_policies/05_fitness_health_sharing.md",
+      "context": {"service_name": "FitPulse", "service_category": "fitness tracking", "jurisdiction": "IN", "intended_feature": "activity tracking", "completeness": "complete",
+        "permissions": [{"name": "Wearable heart-rate sync", "status": "optional"}], "consent_screen_text": null, "policy_date_version": null}
+    },
+    {
+      "id": "06_short_excerpt",
+      "title": "6. Short excerpt: no retention or withdrawal information",
+      "policy_file": "synthetic_policies/06_short_excerpt.md",
+      "context": {"service_name": "ShopEase", "service_category": "online shopping", "jurisdiction": "IN", "intended_feature": "ordering and delivery", "completeness": "excerpt",
+        "permissions": [], "consent_screen_text": null, "policy_date_version": null}
+    },
+    {
+      "id": "07_prompt_injection",
+      "title": "7. Policy with an embedded prompt injection",
+      "policy_file": "synthetic_policies/07_prompt_injection.md",
+      "context": {"service_name": "NoteNest", "service_category": "note-taking", "jurisdiction": "IN", "intended_feature": "syncing notes", "completeness": "complete",
+        "permissions": [], "consent_screen_text": null, "policy_date_version": null}
+    },
+    {
+      "id": "08_well_explained",
+      "title": "8. Well-explained notice with limited data and clear choices",
+      "policy_file": "synthetic_policies/08_well_explained.md",
+      "context": {"service_name": "Kitaab", "service_category": "public library", "jurisdiction": "IN", "intended_feature": "borrowing e-books", "completeness": "complete",
+        "permissions": [],
+        "consent_screen_text": "Recommendations: Off (switch).\n\nSwitch on to get book suggestions based on your borrowing history. You can switch this off at any time in Settings. Borrowing works the same either way.",
+        "policy_date_version": "Synthetic v2 (2026)"}
+    }
+  ]
+}

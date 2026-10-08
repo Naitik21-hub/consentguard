@@ -1,0 +1,61 @@
+{
+  "document_title": "FitPulse Privacy Notice (synthetic)",
+  "document_version": null,
+  "plain_english_summary": {
+    "data_collected": [
+      {"text": "Age, height, weight, steps, heart rate, sleep patterns and, if you choose to log it, menstrual cycle information.", "basis": "stated", "evidence_ids": ["P004"]},
+      {"text": "Continuous heart-rate readings if you connect a wearable.", "basis": "stated", "evidence_ids": ["P005"]}
+    ],
+    "purposes": [
+      {"text": "Showing fitness trends and personalised workout suggestions.", "basis": "stated", "evidence_ids": ["P007"]},
+      {"text": "Partners, including insurers, may use your data to offer personalised plans and premiums.", "basis": "stated", "evidence_ids": ["P009"]}
+    ],
+    "recipients": [
+      {"text": "Wellness partners, including insurance companies, receive health and activity data.", "basis": "stated", "evidence_ids": ["P009"]},
+      {"text": "Research organisations receive aggregated statistics that FitPulse says do not identify you.", "basis": "stated", "evidence_ids": ["P010"]}
+    ],
+    "retention": [
+      {"text": "Kept while your account is active and for 2 years after your last login.", "basis": "stated", "evidence_ids": ["P012"]}
+    ],
+    "choices_and_withdrawal": [
+      {"text": "You can stop wearable syncing in settings and delete your account by email. No choice about partner sharing is described.", "basis": "stated", "evidence_ids": ["P014"]}
+    ],
+    "unknowns": [
+      "Whether sharing with insurers is optional or can be refused.",
+      "Which insurers or partners receive data.",
+      "Whether partners delete data when you leave FitPulse."
+    ]
+  },
+  "data_inventory": [
+    {"data_category": "Body measurements, steps, heart rate, sleep", "collection_basis": "stated", "purpose": "Fitness trends and suggestions; partner offers and premiums", "recipients": "Wellness partners including insurers", "retention": "Account life + 2 years after last login", "evidence_ids": ["P004", "P007", "P009", "P012"]},
+    {"data_category": "Menstrual cycle information (optional logging)", "collection_basis": "stated", "purpose": "Fitness trends (implied); possibly partner sharing as 'health data'", "recipients": "Possibly wellness partners including insurers", "retention": "Account life + 2 years after last login", "evidence_ids": ["P004", "P009"]},
+    {"data_category": "Continuous heart rate from wearable", "collection_basis": "stated", "purpose": "Fitness trends", "recipients": "Possibly wellness partners", "retention": "Account life + 2 years after last login", "evidence_ids": ["P005", "P012"]}
+  ],
+  "permission_purpose_map": [
+    {"permission": "Wearable heart-rate sync", "feature": "Fitness tracking", "scope": "Continuous while connected", "required_status": "optional", "assessment": "proportionate", "rationale": "Continuous heart rate fits a fitness-tracking feature you choose to connect, and syncing can be stopped in settings.", "alternatives": ["Do not connect a wearable", "Stop syncing in Settings > Devices"], "evidence_ids": ["P005", "P014"]},
+    {"permission": "Sharing health data with insurers", "feature": "Partner plans and premiums", "scope": "Health and activity data", "required_status": "unknown", "assessment": "needs_explanation", "rationale": "Insurer use is a separate purpose from fitness tracking and could affect your premiums. The notice gives no separate choice.", "alternatives": ["Separate opt-in for insurer sharing", "Share only aggregated data"], "evidence_ids": ["P009"]}
+  ],
+  "consent_dimensions": [
+    {"dimension_id": "purpose_clarity", "status": "adequate", "explanation": "Purposes are specific, including the insurer purpose.", "evidence_ids": ["P007", "P009"]},
+    {"dimension_id": "optional_separation", "status": "concern", "explanation": "Insurer sharing is not described as optional.", "evidence_ids": ["P009"]},
+    {"dimension_id": "choice_granularity", "status": "concern", "explanation": "Choices exist for wearable syncing, but none for partner sharing.", "evidence_ids": ["P014"]},
+    {"dimension_id": "affirmative_action", "status": "unknown", "explanation": "The consent screen was not supplied.", "evidence_ids": []},
+    {"dimension_id": "withdrawal", "status": "concern", "explanation": "You can stop syncing or delete your account, but the notice gives no route to stop partner sharing.", "evidence_ids": ["P014"]},
+    {"dimension_id": "recipient_retention_transparency", "status": "concern", "explanation": "Retention is stated, but partners are described only by type.", "evidence_ids": ["P009", "P012"]},
+    {"dimension_id": "bundling_or_misleading", "status": "unknown", "explanation": "It is unclear whether partner sharing is a condition of using the app.", "evidence_ids": []}
+  ],
+  "findings": [
+    {"rule_id": "CG-SH-01", "severity": "high", "confidence": "high", "title": "Health data shared with insurers, with no separate choice described", "explanation": "The notice says health and activity data is shared with partners including insurers, who may use it for premiums, and describes no way to refuse this while still using the app.", "evidence_ids": ["P009", "P014"], "quotes": [{"evidence_id": "P009", "quote": "We share your health and activity data with wellness partners, including insurance companies, who may use it to offer you personalised plans and premiums."}], "missing_context": ["Whether the app asks for separate agreement before insurer sharing"], "recommended_action": "Ask FitPulse whether insurer sharing is optional and how to switch it off. Check the app's settings for a partner-sharing choice before logging sensitive data."},
+    {"rule_id": "CG-SN-01", "severity": "medium", "confidence": "high", "title": "Sensitive-in-context health information", "explanation": "Heart rate, sleep and menstrual cycle data are things many people consider sensitive, especially when they may reach insurers. This is a general sensitivity concern. ConsentGuard does not decide how the law classifies this data.", "evidence_ids": ["P004", "P009"], "quotes": [{"evidence_id": "P004", "quote": "if you choose to log it, menstrual cycle information"}], "missing_context": [], "recommended_action": "Consider logging only the data you need; menstrual cycle logging is described as optional."},
+    {"rule_id": "CG-CN-02", "severity": "medium", "confidence": "medium", "title": "No route to stop partner sharing", "explanation": "The notice explains how to stop wearable syncing and delete your account, but not how to withdraw from partner sharing.", "evidence_ids": [], "quotes": [], "missing_context": ["In-app privacy settings"], "recommended_action": "Ask how to withdraw from partner sharing without deleting your account."},
+    {"rule_id": "CG-PO-01", "severity": "informational", "confidence": "high", "title": "Retention period and research aggregation are stated", "explanation": "The notice gives a concrete retention period and says research partners receive only aggregated statistics.", "evidence_ids": ["P010", "P012"], "quotes": [{"evidence_id": "P012", "quote": "for 2 years after your last login"}], "missing_context": [], "recommended_action": "No action needed for this point."}
+  ],
+  "targeted_questions": [
+    {"question": "Is sharing my health data with insurance companies optional? How do I turn it off?", "why_it_matters": "Insurer use could affect the price or terms you are offered."},
+    {"question": "Which insurers receive my data, and do they delete it if I stop using FitPulse?", "why_it_matters": "Onward recipients may keep data longer than FitPulse does."}
+  ],
+  "next_steps": [
+    {"action": "Before logging menstrual or other sensitive data, check whether partner sharing can be switched off.", "conditional": true},
+    {"action": "If you connect a wearable, remember you can stop syncing in Settings > Devices.", "conditional": false}
+  ]
+}

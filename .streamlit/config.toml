@@ -1,0 +1,12 @@
+[browser]
+# ConsentGuard collects no analytics; this also disables Streamlit's own usage statistics.
+gatherUsageStats = false
+
+[server]
+# Only reachable from this computer. Remove to expose on your network (not recommended).
+address = "localhost"
+# Upload limit in MB (the app also enforces 5 MB itself).
+maxUploadSize = 5
+
+[client]
+showErrorDetails = false

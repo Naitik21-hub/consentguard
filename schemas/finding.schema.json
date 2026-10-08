@@ -1,0 +1,148 @@
+{
+  "$defs": {
+    "VerifiedQuote": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        },
+        "verified": {
+          "title": "Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "quote",
+        "verified"
+      ],
+      "title": "VerifiedQuote",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "finding_id": {
+      "title": "Finding Id",
+      "type": "string"
+    },
+    "rule_id": {
+      "title": "Rule Id",
+      "type": "string"
+    },
+    "rule_version": {
+      "title": "Rule Version",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "informational"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "explanation": {
+      "title": "Explanation",
+      "type": "string"
+    },
+    "evidence_basis": {
+      "enum": [
+        "quoted",
+        "absence_in_supplied_text"
+      ],
+      "title": "Evidence Basis",
+      "type": "string"
+    },
+    "document_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Document Evidence Ids",
+      "type": "array"
+    },
+    "quotes": {
+      "items": {
+        "$ref": "#/$defs/VerifiedQuote"
+      },
+      "title": "Quotes",
+      "type": "array"
+    },
+    "legal_source_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Legal Source Ids",
+      "type": "array"
+    },
+    "legal_applicability_status": {
+      "enum": [
+        "verified_in_force",
+        "verified_not_yet_in_force",
+        "not_verified",
+        "not_applicable_jurisdiction",
+        "no_legal_reference"
+      ],
+      "title": "Legal Applicability Status",
+      "type": "string"
+    },
+    "legal_applicability_note": {
+      "title": "Legal Applicability Note",
+      "type": "string"
+    },
+    "missing_context": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Context",
+      "type": "array"
+    },
+    "recommended_action": {
+      "title": "Recommended Action",
+      "type": "string"
+    },
+    "adjustments": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Adjustments",
+      "type": "array"
+    }
+  },
+  "required": [
+    "finding_id",
+    "rule_id",
+    "rule_version",
+    "title",
+    "severity",
+    "confidence",
+    "explanation",
+    "evidence_basis",
+    "document_evidence_ids",
+    "legal_applicability_status",
+    "legal_applicability_note",
+    "recommended_action"
+  ],
+  "title": "Finding",
+  "type": "object"
+}

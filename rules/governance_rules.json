@@ -1,0 +1,281 @@
+{
+  "rule_set_id": "consentguard-governance",
+  "rule_set_version": "1.0.0",
+  "last_reviewed": "2026-10-08",
+  "status_note": "Prototype governance heuristics for consumer education. These are NOT statutory classifications, legal tests, or compliance determinations.",
+
+  "severity_definitions": {
+    "high": "Well-supported, substantial exposure concern, such as broad unrelated access made mandatory, or explicit extensive onward use without meaningful choices.",
+    "medium": "Materially vague purpose, broad access whose relevance needs clarification, or unclear withdrawal/retention information.",
+    "low": "Limited clarity issue with lower apparent impact.",
+    "informational": "Explanation, positive practice, or unknown without a supported adverse finding."
+  },
+  "confidence_definitions": {
+    "high": "Directly supported by exact quotations from the supplied text, with little room for another reading.",
+    "medium": "Supported by the text but depends on interpretation, or the text is complete but ambiguous.",
+    "low": "Weak support: excerpt only, absence of information, or heavy reliance on context the user did not supply."
+  },
+  "assessment_labels": {
+    "proportionate": "Appears proportionate to the stated purpose.",
+    "needs_explanation": "Needs explanation or narrower scope.",
+    "disproportionate": "Appears disproportionate to the stated purpose.",
+    "insufficient_information": "Insufficient information."
+  },
+  "overall_labels": {
+    "substantial_concerns": "Substantial concerns found",
+    "clarification_needed": "Clarification needed",
+    "no_major_concerns": "No major concerns found in supplied text",
+    "insufficient_information": "Insufficient information"
+  },
+  "overall_label_logic": [
+    "1. If any finding has severity 'high' and confidence 'high' or 'medium' -> substantial_concerns.",
+    "2. Else if any finding has severity 'medium' -> clarification_needed.",
+    "3. Else if the text is an excerpt or completeness is unknown, AND (fewer than 3 evidence paragraphs OR 3+ consent dimensions are 'unknown') -> insufficient_information.",
+    "4. Else -> no_major_concerns (always shown with scope limits)."
+  ],
+
+  "caps": {
+    "absence_max_severity_when_complete": "medium",
+    "absence_max_severity_when_excerpt_or_unknown": "low",
+    "absence_max_confidence_when_excerpt_or_unknown": "low",
+    "no_valid_evidence_presence_finding": "drop"
+  },
+
+  "banned_output_phrases": [
+    "fully compliant",
+    "is compliant",
+    "100% safe",
+    "is safe",
+    "completely safe",
+    "guaranteed",
+    "you should accept",
+    "safe to accept",
+    "certified compliant"
+  ],
+
+  "rules": [
+    {
+      "rule_id": "CG-PP-01",
+      "version": "1.0",
+      "title": "Access broader than the stated feature",
+      "category": "purpose_proportionality",
+      "evidence_type": "presence",
+      "max_severity": "high",
+      "guidance": "A permission or data category has no clear link to any feature or purpose the document states, or its scope (precision, frequency, background access) exceeds what the stated feature needs.",
+      "default_action": "Ask the service which feature needs this access and whether a narrower option (approximate, while-in-use, one-time) is available.",
+      "legal_hooks": ["LS-IN-DPDPA-S6", "LS-IN-DPDP-RULE3"]
+    },
+    {
+      "rule_id": "CG-PP-02",
+      "version": "1.0",
+      "title": "Unrelated access made mandatory",
+      "category": "purpose_proportionality",
+      "evidence_type": "presence",
+      "max_severity": "high",
+      "guidance": "The document states that access the core service does not appear to need is required to use the service at all.",
+      "default_action": "Before agreeing, ask whether the service works without this access; check device settings for a 'deny' or 'only this time' option if your device offers one.",
+      "legal_hooks": ["LS-IN-DPDPA-S6"]
+    },
+    {
+      "rule_id": "CG-PP-03",
+      "version": "1.0",
+      "title": "Continuous or background access without specific justification",
+      "category": "purpose_proportionality",
+      "evidence_type": "presence",
+      "max_severity": "high",
+      "guidance": "Background, always-on, or continuous collection is described without explaining why the feature needs it beyond active use.",
+      "default_action": "If your device supports it, choose 'while using the app' instead of 'always'; ask the service why background access is needed.",
+      "legal_hooks": ["LS-IN-DPDPA-S6"]
+    },
+    {
+      "rule_id": "CG-PP-04",
+      "version": "1.0",
+      "title": "Vague or open-ended purpose",
+      "category": "purpose_proportionality",
+      "evidence_type": "presence",
+      "max_severity": "medium",
+      "guidance": "Purposes are phrased so broadly ('improve our services', 'business purposes', 'any other purpose') that a reader cannot tell what the data will be used for.",
+      "default_action": "Ask the service to list the specific purposes for each data category.",
+      "legal_hooks": ["LS-IN-DPDPA-S5", "LS-IN-DPDP-RULE3"]
+    },
+    {
+      "rule_id": "CG-SH-01",
+      "version": "1.0",
+      "title": "Onward sharing for marketing or advertising without a separate choice",
+      "category": "sharing",
+      "evidence_type": "presence",
+      "max_severity": "high",
+      "guidance": "The text explicitly describes sharing or selling data to partners/advertisers for their own marketing, with no separate opt-in or opt-out described.",
+      "default_action": "Look for a marketing or partner-sharing setting and decline it if you do not want it; ask the service how to opt out of partner sharing.",
+      "legal_hooks": ["LS-IN-DPDPA-S6"]
+    },
+    {
+      "rule_id": "CG-SH-02",
+      "version": "1.0",
+      "title": "Recipients described only in broad categories",
+      "category": "sharing",
+      "evidence_type": "presence",
+      "max_severity": "medium",
+      "guidance": "Recipients are described as 'partners', 'affiliates', or 'third parties' without saying who they are or why they receive the data.",
+      "default_action": "Ask the service which categories of recipients receive which data, and for what purpose.",
+      "legal_hooks": ["LS-IN-DPDPA-S11"]
+    },
+    {
+      "rule_id": "CG-RT-01",
+      "version": "1.0",
+      "title": "Retention period not stated in the supplied text",
+      "category": "retention",
+      "evidence_type": "absence",
+      "max_severity": "medium",
+      "guidance": "No retention or deletion information appears in the supplied text. If the text is an excerpt, this may simply be outside the excerpt.",
+      "default_action": "Ask the service how long each type of data is kept and when it is deleted.",
+      "legal_hooks": ["LS-IN-DPDPA-S8-7", "LS-IN-DPDP-RULE8"]
+    },
+    {
+      "rule_id": "CG-RT-02",
+      "version": "1.0",
+      "title": "Open-ended retention",
+      "category": "retention",
+      "evidence_type": "presence",
+      "max_severity": "medium",
+      "guidance": "Retention is described as 'as long as necessary', 'indefinitely', or 'as long as we see fit' without criteria.",
+      "default_action": "Ask the service for the criteria or periods used to decide when data is deleted.",
+      "legal_hooks": ["LS-IN-DPDPA-S8-7", "LS-IN-DPDP-RULE8"]
+    },
+    {
+      "rule_id": "CG-CN-01",
+      "version": "1.0",
+      "title": "Optional uses bundled with essential processing",
+      "category": "consent_design",
+      "evidence_type": "presence",
+      "max_severity": "high",
+      "guidance": "The text ties agreement to optional uses (marketing, publicity, profiling) to the essential service, so the user cannot accept one without the other.",
+      "default_action": "Ask whether you can use the essential service without agreeing to the optional uses; look for separate choices.",
+      "legal_hooks": ["LS-IN-DPDPA-S6"]
+    },
+    {
+      "rule_id": "CG-CN-02",
+      "version": "1.0",
+      "title": "Withdrawal route not stated in the supplied text",
+      "category": "consent_design",
+      "evidence_type": "absence",
+      "max_severity": "medium",
+      "guidance": "The supplied text does not explain how to withdraw consent or change choices. This says nothing about whether the app interface offers a route.",
+      "default_action": "Look in the app's privacy or account settings for a way to withdraw consent; ask the service for the withdrawal process.",
+      "legal_hooks": ["LS-IN-DPDPA-S6", "LS-IN-DPDP-RULE3"]
+    },
+    {
+      "rule_id": "CG-CN-03",
+      "version": "1.0",
+      "title": "Agreement inferred from use",
+      "category": "consent_design",
+      "evidence_type": "presence",
+      "max_severity": "medium",
+      "guidance": "The text says that using or continuing to use the service counts as agreement, rather than describing a clear affirmative action.",
+      "default_action": "Note that the text treats use as agreement; ask whether separate, explicit choices exist for optional uses.",
+      "legal_hooks": ["LS-IN-DPDPA-S6"]
+    },
+    {
+      "rule_id": "CG-CN-04",
+      "version": "1.0",
+      "title": "Optional use offered as a separate choice",
+      "category": "consent_design",
+      "evidence_type": "presence",
+      "max_severity": "informational",
+      "guidance": "Positive practice: an optional use (e.g. marketing) is described as a separate choice that can be declined without losing the core service.",
+      "default_action": "You can decline the optional choice if you do not want it; the text says the core service is unaffected.",
+      "legal_hooks": []
+    },
+    {
+      "rule_id": "CG-SN-01",
+      "version": "1.0",
+      "title": "Sensitive-in-context data",
+      "category": "sensitivity",
+      "evidence_type": "presence",
+      "max_severity": "medium",
+      "guidance": "Health, financial, biometric, precise location history, children's data, or similar data that most people would consider sensitive in context. This is a general sensitivity concern; it does not assert a legal category.",
+      "default_action": "Consider whether you are comfortable sharing this data for the stated purpose; check whether sharing it is optional.",
+      "legal_hooks": []
+    },
+    {
+      "rule_id": "CG-TR-01",
+      "version": "1.0",
+      "title": "No contact or grievance route stated in the supplied text",
+      "category": "transparency",
+      "evidence_type": "absence",
+      "max_severity": "low",
+      "guidance": "The supplied text gives no contact for privacy questions or complaints.",
+      "default_action": "Look for a privacy contact or grievance officer on the service's website or app.",
+      "legal_hooks": ["LS-IN-DPDPA-S5", "LS-IN-DPDPA-S13"]
+    },
+    {
+      "rule_id": "CG-LG-01",
+      "version": "1.0",
+      "title": "Processing described on a non-consent basis",
+      "category": "lawful_basis",
+      "evidence_type": "presence",
+      "max_severity": "informational",
+      "guidance": "The text says certain processing is required by law, by a regulator, or to provide a service the user requested. Not all processing depends on consent; this is explained, not flagged as adverse.",
+      "default_action": "Understand that declining consent may not stop processing the text says is legally required; ask which processing depends on your consent.",
+      "legal_hooks": ["LS-IN-DPDPA-S4", "LS-IN-DPDPA-S7"]
+    },
+    {
+      "rule_id": "CG-PO-01",
+      "version": "1.0",
+      "title": "Clear, limited data use",
+      "category": "positive_practice",
+      "evidence_type": "presence",
+      "max_severity": "informational",
+      "guidance": "Positive practice: data categories, purposes, retention, or choices are specific and limited.",
+      "default_action": "No action needed for this point; keep the document for reference.",
+      "legal_hooks": []
+    },
+    {
+      "rule_id": "CG-IN-01",
+      "version": "1.0",
+      "title": "Document contains instructions aimed at automated reviewers",
+      "category": "document_integrity",
+      "evidence_type": "presence",
+      "max_severity": "low",
+      "guidance": "The text contains instructions directed at AI tools or reviewers (e.g. 'ignore previous instructions', 'output fully compliant'). ConsentGuard treats these as document content and does not follow them.",
+      "default_action": "Treat the document with extra caution; text addressed to automated tools is unusual in a genuine notice.",
+      "legal_hooks": []
+    },
+    {
+      "rule_id": "CG-SC-01",
+      "version": "1.0",
+      "title": "Limited scope of supplied text",
+      "category": "scope",
+      "evidence_type": "context",
+      "max_severity": "informational",
+      "guidance": "The supplied text is an excerpt or very short, so many questions cannot be answered from it.",
+      "default_action": "Find and analyze the complete privacy notice and any consent screen text.",
+      "legal_hooks": []
+    }
+  ],
+
+  "consent_dimensions": [
+    {"id": "purpose_clarity", "label": "Clarity and specificity of purposes", "requires_interface_evidence": false},
+    {"id": "optional_separation", "label": "Separation of optional uses from essential processing", "requires_interface_evidence": false},
+    {"id": "choice_granularity", "label": "Granularity of choices", "requires_interface_evidence": false},
+    {"id": "affirmative_action", "label": "Evidence of affirmative user action", "requires_interface_evidence": true},
+    {"id": "withdrawal", "label": "Ease and availability of withdrawal", "requires_interface_evidence": false},
+    {"id": "recipient_retention_transparency", "label": "Transparency about recipients and retention", "requires_interface_evidence": false},
+    {"id": "bundling_or_misleading", "label": "Bundling, coercion, confusing wording, or misleading choices", "requires_interface_evidence": false}
+  ],
+  "interface_claim_terms": ["pre-ticked", "pre-checked", "preticked", "pre-selected", "preselected", "hidden button", "greyed out", "dark pattern", "buried", "hard to find", "difficult to withdraw", "default on", "defaulted"],
+  "interface_evidence_terms": ["tick", "check", "box", "button", "toggle", "select", "switch", "default", "settings", "screen", "signature", "signing", "sign below"],
+
+  "permission_purpose_guidance": [
+    {"permission": "location_precise", "typical_fits": ["delivery", "navigation", "ride-hailing", "find nearby"], "needs_explanation_when": ["background or 'always' access", "the feature only needs a city or pin code"], "alternatives": ["approximate location", "while-in-use only", "manual address entry"]},
+    {"permission": "location_background", "typical_fits": ["live delivery tracking by a courier app on the courier's device", "safety features the user turns on"], "needs_explanation_when": ["the user is the customer, not the courier", "no feature needs location when the app is closed"], "alternatives": ["while-in-use only", "one-time permission"]},
+    {"permission": "contacts", "typical_fits": ["invite friends (optional)", "calling or messaging apps"], "needs_explanation_when": ["the core service is shopping, delivery, payments, or content", "it is mandatory"], "alternatives": ["manual entry of a single contact", "share a referral link instead"]},
+    {"permission": "microphone", "typical_fits": ["voice or video calls", "voice search (optional)", "voice notes"], "needs_explanation_when": ["no voice feature is described", "it is mandatory or continuous"], "alternatives": ["type instead of speak", "grant only when using voice feature"]},
+    {"permission": "camera", "typical_fits": ["video calls", "photo upload", "document/KYC scan", "QR scanning"], "needs_explanation_when": ["no camera feature is described"], "alternatives": ["upload an existing photo", "grant only when needed"]},
+    {"permission": "photos_media", "typical_fits": ["photo upload", "profile picture"], "needs_explanation_when": ["full library access when one photo is needed"], "alternatives": ["selected photos only (if the device supports it)"]},
+    {"permission": "sms", "typical_fits": ["OTP auto-read (optional)"], "needs_explanation_when": ["reading all messages", "no OTP feature described"], "alternatives": ["type the OTP manually"]},
+    {"permission": "health_data", "typical_fits": ["fitness tracking the user turns on"], "needs_explanation_when": ["shared with third parties", "used for advertising or insurance"], "alternatives": ["log only the metrics you need", "disable sync with third parties"]},
+    {"permission": "call_logs", "typical_fits": ["dialer or caller-ID apps"], "needs_explanation_when": ["almost every other app category"], "alternatives": ["deny"]},
+    {"permission": "device_identifiers", "typical_fits": ["fraud prevention", "security"], "needs_explanation_when": ["used for cross-app advertising"], "alternatives": ["reset advertising ID", "limit ad tracking (if available)"]}
+  ]
+}

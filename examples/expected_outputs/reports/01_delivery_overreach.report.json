@@ -1,0 +1,890 @@
+{
+  "report_id": "CG-C4C94924CA",
+  "analyzed_at": "2026-10-08T10:29:14+00:00",
+  "mode": "demo",
+  "mode_note": "DEMO: pre-authored demonstration output for a synthetic document, validated by the live pipeline. Not live AI analysis.",
+  "model_id": null,
+  "document_title": "QuickBasket Privacy Notice (synthetic)",
+  "document_version": "Synthetic v1 (2026)",
+  "jurisdiction": "IN",
+  "supplied_context": {
+    "service_name": "QuickBasket",
+    "service_category": "grocery delivery",
+    "jurisdiction": "IN",
+    "intended_feature": "home delivery of groceries",
+    "completeness": "complete",
+    "permissions": [
+      {
+        "name": "Precise location (always)",
+        "status": "required"
+      },
+      {
+        "name": "Contacts",
+        "status": "required"
+      },
+      {
+        "name": "Microphone",
+        "status": "required"
+      }
+    ],
+    "consent_screen_text": null,
+    "policy_date_version": "Synthetic v1 (2026)"
+  },
+  "completeness": "complete",
+  "extraction_warnings": [],
+  "overall_assessment": "substantial_concerns",
+  "overall_assessment_label": "Substantial concerns found",
+  "overall_rationale": "3 high-severity finding(s) are supported by quoted text (F01, F02, F03).",
+  "plain_english_summary": {
+    "data_collected": [
+      {
+        "text": "Account details: name, mobile number, email address and delivery addresses.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P004"
+        ]
+      },
+      {
+        "text": "Precise location at all times, including when the app is closed, collected continuously in the background.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P005",
+          "P006"
+        ]
+      },
+      {
+        "text": "Access to your phone contacts and microphone is required. The notice says contacts are used, but it does not say what is collected through the microphone.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P005",
+          "P009",
+          "P010"
+        ]
+      }
+    ],
+    "purposes": [
+      {
+        "text": "Delivering orders and processing payments.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P008"
+        ]
+      },
+      {
+        "text": "Broad purposes: 'improve our services', 'other business purposes' and 'a better experience', which do not say what the data is actually used for.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P006",
+          "P008",
+          "P010"
+        ]
+      },
+      {
+        "text": "Contacts are used to map your social network and to recommend the app to people you know.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P009"
+        ]
+      }
+    ],
+    "recipients": [
+      {
+        "text": "Partners, affiliates and other unnamed third parties, for marketing and analytics.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P012"
+        ]
+      }
+    ],
+    "retention": [
+      {
+        "text": "Kept 'for as long as we consider necessary'. No period or criteria are given.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P014"
+        ]
+      }
+    ],
+    "choices_and_withdrawal": [
+      {
+        "text": "Continuing to use the app is treated as agreement. No way to refuse individual permissions or to withdraw is described.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P016",
+          "P005"
+        ]
+      }
+    ],
+    "unknowns": [
+      "How long location, contacts and any audio data are kept.",
+      "Which partners receive data, and whether marketing sharing can be refused.",
+      "How to withdraw consent or delete your account.",
+      "What the consent screen looks like (not supplied)."
+    ]
+  },
+  "data_inventory": [
+    {
+      "data_category": "Name, mobile number, email, delivery addresses",
+      "collection_basis": "stated",
+      "purpose": "Account, delivery and payments",
+      "recipients": "Partners, affiliates, third parties (marketing and analytics)",
+      "retention": "As long as considered necessary",
+      "evidence_ids": [
+        "P004",
+        "P008",
+        "P012",
+        "P014"
+      ]
+    },
+    {
+      "data_category": "Precise location (continuous, background)",
+      "collection_basis": "stated",
+      "purpose": "'A better experience'",
+      "recipients": null,
+      "retention": "As long as considered necessary",
+      "evidence_ids": [
+        "P005",
+        "P006"
+      ]
+    },
+    {
+      "data_category": "Phone contacts",
+      "collection_basis": "stated",
+      "purpose": "Social-network analysis and referrals",
+      "recipients": null,
+      "retention": null,
+      "evidence_ids": [
+        "P005",
+        "P009"
+      ]
+    },
+    {
+      "data_category": "Microphone audio",
+      "collection_basis": "permission_only",
+      "purpose": "'Improve our services'",
+      "recipients": null,
+      "retention": null,
+      "evidence_ids": [
+        "P005",
+        "P010"
+      ]
+    }
+  ],
+  "permission_purpose_map": [
+    {
+      "permission": "Precise location (always, background)",
+      "feature": "Delivery",
+      "scope": "Precise, continuous, also when the app is closed",
+      "required_status": "required",
+      "assessment": "needs_explanation",
+      "rationale": "Location fits delivery, but a customer usually needs it only while placing or tracking an order. Background, always-on collection is justified only as 'a better experience'.",
+      "alternatives": [
+        "While-in-use location",
+        "Approximate location",
+        "Typing the delivery address"
+      ],
+      "evidence_ids": [
+        "P005",
+        "P006"
+      ]
+    },
+    {
+      "permission": "Contacts",
+      "feature": "Referral / social network analysis",
+      "scope": "Whole contact list",
+      "required_status": "required",
+      "assessment": "disproportionate",
+      "rationale": "Grocery delivery does not need your contact list. The stated use (social network analysis and recommending the app) serves the company, yet it is mandatory.",
+      "alternatives": [
+        "Share a referral link instead",
+        "Make contacts access optional"
+      ],
+      "evidence_ids": [
+        "P005",
+        "P009"
+      ]
+    },
+    {
+      "permission": "Microphone",
+      "feature": "None described",
+      "scope": "Not stated",
+      "required_status": "required",
+      "assessment": "disproportionate",
+      "rationale": "No voice feature is described. The only reason given is to 'improve our services', yet access is mandatory. If an optional voice-search feature existed, microphone access could fit it.",
+      "alternatives": [
+        "Type searches instead",
+        "Grant microphone only when using a voice feature, if one exists"
+      ],
+      "evidence_ids": [
+        "P005",
+        "P010"
+      ]
+    }
+  ],
+  "consent_dimensions": [
+    {
+      "dimension_id": "purpose_clarity",
+      "status": "concern",
+      "explanation": "Several purposes are vague ('improve our services', 'other business purposes', 'a better experience').",
+      "evidence_ids": [
+        "P006",
+        "P008",
+        "P010"
+      ]
+    },
+    {
+      "dimension_id": "optional_separation",
+      "status": "concern",
+      "explanation": "All permissions are presented as required; no optional uses are separated from delivery.",
+      "evidence_ids": [
+        "P005"
+      ]
+    },
+    {
+      "dimension_id": "choice_granularity",
+      "status": "concern",
+      "explanation": "The text offers no separate choices for contacts, microphone or marketing sharing.",
+      "evidence_ids": [
+        "P005",
+        "P012"
+      ]
+    },
+    {
+      "dimension_id": "affirmative_action",
+      "status": "unknown",
+      "explanation": "The notice treats continued use as agreement. Whether the app asks for a clear action cannot be seen without the consent screen.",
+      "evidence_ids": [
+        "P016"
+      ]
+    },
+    {
+      "dimension_id": "withdrawal",
+      "status": "concern",
+      "explanation": "No withdrawal route is described in the notice.",
+      "evidence_ids": [
+        "P016"
+      ]
+    },
+    {
+      "dimension_id": "recipient_retention_transparency",
+      "status": "concern",
+      "explanation": "Recipients are unnamed categories and retention is open-ended.",
+      "evidence_ids": [
+        "P012",
+        "P014"
+      ]
+    },
+    {
+      "dimension_id": "bundling_or_misleading",
+      "status": "concern",
+      "explanation": "Unrelated access is bundled with the core delivery service: the app will not work without it.",
+      "evidence_ids": [
+        "P005"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "F01",
+      "rule_id": "CG-PP-02",
+      "rule_version": "1.0",
+      "title": "Contacts and microphone made mandatory for grocery delivery",
+      "severity": "high",
+      "confidence": "high",
+      "explanation": "The notice makes contacts and microphone access a condition of using the app, but neither is needed to deliver groceries. Contacts are used for social-network analysis and referrals; the microphone has no described feature.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P005",
+        "P009",
+        "P010"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P005",
+          "quote": "If you do not allow these permissions the app will not work.",
+          "verified": true
+        },
+        {
+          "evidence_id": "P009",
+          "quote": "Contacts are used to help us understand your social network",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S6"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "Whether the app in fact works if you deny these permissions on your device"
+      ],
+      "recommended_action": "Before agreeing, ask QuickBasket whether you can order without contacts and microphone access. If your phone lets you deny a permission, try denying these and see whether ordering still works.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F02",
+      "rule_id": "CG-PP-03",
+      "rule_version": "1.0",
+      "title": "Always-on background location justified only as 'a better experience'",
+      "severity": "high",
+      "confidence": "high",
+      "explanation": "Delivery can justify location while you order or track, but the notice requires precise location even when the app is closed, collected continuously, with only a vague reason.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P005",
+        "P006"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P005",
+          "quote": "precise location at all times, including when the app is closed",
+          "verified": true
+        },
+        {
+          "evidence_id": "P006",
+          "quote": "We collect location data continuously in the background to provide a better experience.",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S6"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "Whether the app offers a while-in-use option"
+      ],
+      "recommended_action": "If your device allows it, choose 'while using the app' or approximate location. Ask why background location is needed for a customer.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F03",
+      "rule_id": "CG-SH-01",
+      "rule_version": "1.0",
+      "title": "Sharing with partners for marketing, with no separate choice described",
+      "severity": "high",
+      "confidence": "medium",
+      "explanation": "The notice says data may be shared with partners, affiliates and other third parties for marketing, and describes no way to refuse this separately from using the app.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P012",
+        "P016"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P012",
+          "quote": "We may share your information with our partners, affiliates and other third parties for marketing and analytics.",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S6"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "Whether an opt-out exists in the app settings or consent screen"
+      ],
+      "recommended_action": "Look for a marketing or partner-sharing setting and decline it if you do not want it; ask QuickBasket how to opt out.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F04",
+      "rule_id": "CG-CN-03",
+      "rule_version": "1.0",
+      "title": "Agreement inferred from continued use",
+      "severity": "medium",
+      "confidence": "high",
+      "explanation": "The notice treats using the app as agreement, instead of describing a clear choice by you.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P016"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P016",
+          "quote": "By continuing to use the app you agree to this notice.",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S6"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "The consent screen text"
+      ],
+      "recommended_action": "Ask whether there are separate, explicit choices for optional uses such as marketing.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F05",
+      "rule_id": "CG-PP-04",
+      "rule_version": "1.0",
+      "title": "Vague purposes",
+      "severity": "medium",
+      "confidence": "high",
+      "explanation": "'Improve our services' and 'other business purposes' could cover almost anything, so you cannot tell what your data will be used for.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P008",
+        "P010"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P008",
+          "quote": "improve our services and for other business purposes",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S5",
+        "LS-IN-DPDP-RULE3"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [],
+      "recommended_action": "Ask QuickBasket to list the specific purposes for each type of data.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F06",
+      "rule_id": "CG-RT-02",
+      "rule_version": "1.0",
+      "title": "Open-ended retention",
+      "severity": "medium",
+      "confidence": "high",
+      "explanation": "Data is kept as long as the company 'considers necessary', with no period or criteria.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P014"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P014",
+          "quote": "We keep your information for as long as we consider necessary.",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S8-7",
+        "LS-IN-DPDP-RULE8"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [],
+      "recommended_action": "Ask how long location, contacts and account data are kept and when they are deleted.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F07",
+      "rule_id": "CG-CN-02",
+      "rule_version": "1.0",
+      "title": "No withdrawal route described",
+      "severity": "medium",
+      "confidence": "medium",
+      "explanation": "The complete notice does not explain how to withdraw consent or turn off permissions or sharing.",
+      "evidence_basis": "absence_in_supplied_text",
+      "document_evidence_ids": [],
+      "quotes": [],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S6",
+        "LS-IN-DPDP-RULE3"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "App settings may offer a route that the notice does not mention"
+      ],
+      "recommended_action": "Check your phone's app-permission settings and the app's account settings; ask QuickBasket for the withdrawal process.",
+      "adjustments": []
+    }
+  ],
+  "targeted_questions": [
+    {
+      "question": "Does the app work for ordering if I deny contacts and microphone access?",
+      "why_it_matters": "Shows whether these permissions are truly needed for delivery."
+    },
+    {
+      "question": "Why do you need my location when the app is closed?",
+      "why_it_matters": "Background location reveals your movements all day, not just your delivery address."
+    },
+    {
+      "question": "Which partners receive my data for marketing, and how do I opt out?",
+      "why_it_matters": "Unnamed recipients and no opt-out mean you cannot control onward use."
+    },
+    {
+      "question": "How long do you keep my location history and contacts?",
+      "why_it_matters": "Open-ended retention increases exposure over time."
+    }
+  ],
+  "next_steps": [
+    {
+      "action": "If your phone offers it, set location to 'while using the app' and deny contacts and microphone, then check whether ordering still works.",
+      "conditional": true
+    },
+    {
+      "action": "Ask QuickBasket support the questions above before agreeing.",
+      "conditional": false
+    },
+    {
+      "action": "Consider an alternative service if mandatory access remains unexplained.",
+      "conditional": false
+    },
+    {
+      "action": "Before agreeing, ask QuickBasket whether you can order without contacts and microphone access. If your phone lets you deny a permission, try denying these and see whether ordering still works.",
+      "conditional": true
+    },
+    {
+      "action": "If your device allows it, choose 'while using the app' or approximate location. Ask why background location is needed for a customer.",
+      "conditional": true
+    },
+    {
+      "action": "Look for a marketing or partner-sharing setting and decline it if you do not want it; ask QuickBasket how to opt out.",
+      "conditional": true
+    },
+    {
+      "action": "Ask whether there are separate, explicit choices for optional uses such as marketing.",
+      "conditional": true
+    },
+    {
+      "action": "Ask QuickBasket to list the specific purposes for each type of data.",
+      "conditional": true
+    },
+    {
+      "action": "Ask how long location, contacts and account data are kept and when they are deleted.",
+      "conditional": true
+    },
+    {
+      "action": "Check your phone's app-permission settings and the app's account settings; ask QuickBasket for the withdrawal process.",
+      "conditional": true
+    },
+    {
+      "action": "If you need a legal determination, ask a qualified privacy or legal professional; ConsentGuard does not provide one.",
+      "conditional": false
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "P001",
+      "text": "QuickBasket Privacy Notice",
+      "page": null,
+      "paragraph_index": 1,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P002",
+      "text": "SYNTHETIC DEMONSTRATION DOCUMENT: QuickBasket is a fictional grocery delivery app invented for ConsentGuard demos. This is not a real policy.",
+      "page": null,
+      "paragraph_index": 2,
+      "section": "QuickBasket Privacy Notice",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P003",
+      "text": "Information we collect",
+      "page": null,
+      "paragraph_index": 3,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P004",
+      "text": "When you create an account we collect your name, mobile number, email address and delivery addresses.",
+      "page": null,
+      "paragraph_index": 4,
+      "section": "Information we collect",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P005",
+      "text": "To use QuickBasket you must allow access to your precise location at all times, including when the app is closed, your phone contacts, and your microphone. If you do not allow these permissions the app will not work.",
+      "page": null,
+      "paragraph_index": 5,
+      "section": "Information we collect",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P006",
+      "text": "We collect location data continuously in the background to provide a better experience.",
+      "page": null,
+      "paragraph_index": 6,
+      "section": "Information we collect",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P007",
+      "text": "How we use information",
+      "page": null,
+      "paragraph_index": 7,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P008",
+      "text": "We use your information to deliver orders, process payments, improve our services and for other business purposes.",
+      "page": null,
+      "paragraph_index": 8,
+      "section": "How we use information",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P009",
+      "text": "Contacts are used to help us understand your social network and recommend QuickBasket to people you know.",
+      "page": null,
+      "paragraph_index": 9,
+      "section": "How we use information",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P010",
+      "text": "Microphone access helps us improve our services.",
+      "page": null,
+      "paragraph_index": 10,
+      "section": "How we use information",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P011",
+      "text": "Sharing",
+      "page": null,
+      "paragraph_index": 11,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P012",
+      "text": "We may share your information with our partners, affiliates and other third parties for marketing and analytics.",
+      "page": null,
+      "paragraph_index": 12,
+      "section": "Sharing",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P013",
+      "text": "Retention",
+      "page": null,
+      "paragraph_index": 13,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P014",
+      "text": "We keep your information for as long as we consider necessary.",
+      "page": null,
+      "paragraph_index": 14,
+      "section": "Retention",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P015",
+      "text": "Your choices",
+      "page": null,
+      "paragraph_index": 15,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P016",
+      "text": "By continuing to use the app you agree to this notice.",
+      "page": null,
+      "paragraph_index": 16,
+      "section": "Your choices",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P017",
+      "text": "For questions, write to the QuickBasket support team through the app.",
+      "page": null,
+      "paragraph_index": 17,
+      "section": "Your choices",
+      "source": "document"
+    }
+  ],
+  "legal_sources": [
+    {
+      "source_id": "LS-IN-DPDPA-COMMENCE",
+      "jurisdiction": "IN",
+      "source_type": "gazette_notification",
+      "title": "Notification G.S.R. 843(E) appointing commencement dates for the Digital Personal Data Protection Act, 2023",
+      "issuing_authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "official_url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+      "provision": "Paragraphs (a)-(c): phased commencement",
+      "publication_date": "2025-11-13",
+      "effective_date": "2025-11-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "On publication: s.1(2), s.2, ss.18-26, s.35, ss.38-43, s.44(1) and (3). One year after publication: s.6(9) and s.27(1)(d). Eighteen months after publication: ss.3-5, s.6(1)-(8) and (10), ss.7-17, s.27 (except (1)(d)), ss.28-34, 36, 37 and s.44(2).",
+      "applicability_notes": "Controls which DPDP Act duties are in force on a given date."
+    },
+    {
+      "source_id": "LS-IN-DPDP-RULE3",
+      "jurisdiction": "IN",
+      "source_type": "rules",
+      "title": "Digital Personal Data Protection Rules, 2025, rule 3 - Notice given by Data Fiduciary",
+      "issuing_authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "official_url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+      "provision": "Rule 3",
+      "publication_date": "2025-11-13",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "The notice must be understandable independently of other information; give in clear and plain language an itemised description of personal data and the specified purpose(s); and give a link and other means to withdraw consent with ease comparable to giving it, exercise rights, and complain to the Board.",
+      "applicability_notes": "Commences eighteen months after publication of the Rules."
+    },
+    {
+      "source_id": "LS-IN-DPDP-RULE8",
+      "jurisdiction": "IN",
+      "source_type": "rules",
+      "title": "Digital Personal Data Protection Rules, 2025, rule 8 - Time period for specified purpose deemed no longer served",
+      "issuing_authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "official_url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+      "provision": "Rule 8",
+      "publication_date": "2025-11-13",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "Specified classes of Data Fiduciaries must erase data after periods set in the Third Schedule (with 48-hour prior intimation); all Data Fiduciaries must retain processing logs and associated data for at least one year for purposes in the Seventh Schedule.",
+      "applicability_notes": "Commences eighteen months after publication of the Rules. Note the one-year minimum log retention: a notice that mentions retaining some records for a year is not necessarily over-retention."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S5",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 5 - Notice",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 5",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "A consent request must be accompanied or preceded by a notice describing the personal data and purpose, how to exercise withdrawal and grievance rights, and how to complain to the Board; option to access the notice in English or an Eighth Schedule language.",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E). Applies to consent requests, not to processing on other grounds."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S6",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 6 - Consent",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 6(1)-(8) and (10)",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "Consent must be free, specific, informed, unconditional and unambiguous with a clear affirmative action, limited to data necessary for the specified purpose (6(1)); illustration: contact-list access is not necessary for a telemedicine service. Withdrawal must be comparable in ease to giving consent (6(4)).",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E). Relevant only where consent is the basis of processing."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S8-7",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 8(7) - Erasure",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 8(7)",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "Unless retention is necessary to comply with law, personal data must be erased on withdrawal of consent or once it is reasonable to assume the specified purpose is no longer served, whichever is earlier.",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E)."
+    }
+  ],
+  "last_verification_date": "2026-10-08",
+  "rule_set_version": "1.0.0",
+  "limitations": [
+    "ConsentGuard explains and assesses the supplied text only. It does not know whether the organisation actually follows its policy.",
+    "This is a consumer-education prototype, not legal advice, a compliance certification, or a security scan.",
+    "Severity and confidence labels are prototype governance heuristics, not statutory classifications.",
+    "A privacy notice alone cannot show how a consent screen behaves (for example, whether boxes are pre-ticked).",
+    "Legal sources are limited to the India registry verified on the date shown; laws and commencement dates can change.",
+    "No consent-screen text was supplied, so interface behaviour was not assessed."
+  ],
+  "skills_run": [
+    {
+      "skill": "document-intake",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "17 paragraphs; parse quality good."
+    },
+    {
+      "skill": "evidence-extraction",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "plain-language-explanation",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "purpose-proportionality",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "consent-design-review",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "user-action-plan",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "jurisdiction-check",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "Legal sources attached from registry only."
+    },
+    {
+      "skill": "findings-prioritization",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "0 finding(s) adjusted by rule caps."
+    },
+    {
+      "skill": "report-and-qa",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "3 validation check(s) recorded."
+    }
+  ],
+  "validation": [
+    {
+      "check": "all finding evidence IDs exist",
+      "passed": true,
+      "detail": "11 reference(s) checked."
+    },
+    {
+      "check": "all retained quotes verified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "legal sources come from registry",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

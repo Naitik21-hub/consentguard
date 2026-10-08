@@ -1,0 +1,220 @@
+{
+  "title": "Intake",
+  "type": "object",
+  "properties": {
+    "supplied_context": {
+      "$defs": {
+        "PermissionInput": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "maxLength": 80,
+              "title": "Name",
+              "type": "string"
+            },
+            "status": {
+              "default": "unknown",
+              "enum": [
+                "required",
+                "optional",
+                "unknown"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "PermissionInput",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "service_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service Name"
+        },
+        "service_category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service Category"
+        },
+        "jurisdiction": {
+          "default": "IN",
+          "title": "Jurisdiction",
+          "type": "string"
+        },
+        "intended_feature": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Intended Feature"
+        },
+        "completeness": {
+          "default": "unknown",
+          "enum": [
+            "complete",
+            "excerpt",
+            "unknown"
+          ],
+          "title": "Completeness",
+          "type": "string"
+        },
+        "permissions": {
+          "items": {
+            "$ref": "#/$defs/PermissionInput"
+          },
+          "title": "Permissions",
+          "type": "array"
+        },
+        "consent_screen_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Consent Screen Text"
+        },
+        "policy_date_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Policy Date Version"
+        }
+      },
+      "title": "SuppliedContext",
+      "type": "object"
+    },
+    "intake_result": {
+      "additionalProperties": false,
+      "properties": {
+        "source_type": {
+          "enum": [
+            "paste",
+            "txt",
+            "md",
+            "pdf"
+          ],
+          "title": "Source Type",
+          "type": "string"
+        },
+        "char_count": {
+          "title": "Char Count",
+          "type": "integer"
+        },
+        "paragraph_count": {
+          "title": "Paragraph Count",
+          "type": "integer"
+        },
+        "page_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Count"
+        },
+        "parse_quality": {
+          "enum": [
+            "good",
+            "partial",
+            "failed"
+          ],
+          "title": "Parse Quality",
+          "type": "string"
+        },
+        "completeness": {
+          "enum": [
+            "complete",
+            "excerpt",
+            "unknown"
+          ],
+          "title": "Completeness",
+          "type": "string"
+        },
+        "jurisdiction": {
+          "title": "Jurisdiction",
+          "type": "string"
+        },
+        "jurisdiction_supported": {
+          "title": "Jurisdiction Supported",
+          "type": "boolean"
+        },
+        "extraction_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Extraction Warnings",
+          "type": "array"
+        },
+        "injection_evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Injection Evidence Ids",
+          "type": "array"
+        },
+        "within_limits": {
+          "default": true,
+          "title": "Within Limits",
+          "type": "boolean"
+        },
+        "material_questions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Material Questions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_type",
+        "char_count",
+        "paragraph_count",
+        "parse_quality",
+        "completeness",
+        "jurisdiction",
+        "jurisdiction_supported"
+      ],
+      "title": "IntakeResult",
+      "type": "object"
+    }
+  }
+}

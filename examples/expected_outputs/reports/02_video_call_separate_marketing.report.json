@@ -1,0 +1,599 @@
+{
+  "report_id": "CG-A30AA3A34E",
+  "analyzed_at": "2026-10-08T10:29:14+00:00",
+  "mode": "demo",
+  "mode_note": "DEMO: pre-authored demonstration output for a synthetic document, validated by the live pipeline. Not live AI analysis.",
+  "model_id": null,
+  "document_title": "MeetLoop Privacy and Permissions Notice (synthetic)",
+  "document_version": "Synthetic v1 (2026)",
+  "jurisdiction": "IN",
+  "supplied_context": {
+    "service_name": "MeetLoop",
+    "service_category": "video calling",
+    "jurisdiction": "IN",
+    "intended_feature": "video calls",
+    "completeness": "complete",
+    "permissions": [
+      {
+        "name": "Microphone",
+        "status": "required"
+      },
+      {
+        "name": "Camera",
+        "status": "required"
+      }
+    ],
+    "consent_screen_text": null,
+    "policy_date_version": "Synthetic v1 (2026)"
+  },
+  "completeness": "complete",
+  "extraction_warnings": [],
+  "overall_assessment": "no_major_concerns",
+  "overall_assessment_label": "No major concerns found in supplied text",
+  "overall_rationale": "No high- or medium-severity concerns were supported by the supplied text. This covers only what the text says, not how the organisation behaves in practice.",
+  "plain_english_summary": {
+    "data_collected": [
+      {
+        "text": "Name and mobile number for your account.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P004"
+        ]
+      },
+      {
+        "text": "Microphone and camera access, requested only when you start or join a call.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P005"
+        ]
+      },
+      {
+        "text": "Call metadata: time, duration and participants of each call.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P006"
+        ]
+      }
+    ],
+    "purposes": [
+      {
+        "text": "Running calls, showing call history and detecting abuse.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P005",
+          "P006"
+        ]
+      },
+      {
+        "text": "Optional offers and product news, only if you switch this on.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P008"
+        ]
+      }
+    ],
+    "recipients": [
+      {
+        "text": "A cloud hosting provider that processes data on MeetLoop's instructions. MeetLoop says it does not sell personal data.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P010"
+        ]
+      }
+    ],
+    "retention": [
+      {
+        "text": "Call metadata for 90 days; account details deleted within 30 days after you delete your account. Recordings stay on your device.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P012",
+          "P005"
+        ]
+      }
+    ],
+    "choices_and_withdrawal": [
+      {
+        "text": "Turn off camera or microphone in phone settings and marketing under Settings > Notifications > Marketing. Turning marketing off does not affect calls.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P014",
+          "P008"
+        ]
+      }
+    ],
+    "unknowns": [
+      "The name and location of the cloud hosting provider.",
+      "How the marketing choice is presented on screen (consent screen not supplied)."
+    ]
+  },
+  "data_inventory": [
+    {
+      "data_category": "Name, mobile number",
+      "collection_basis": "stated",
+      "purpose": "Account and contact discovery",
+      "recipients": "Cloud hosting provider",
+      "retention": "Deleted within 30 days after account deletion",
+      "evidence_ids": [
+        "P004",
+        "P010",
+        "P012"
+      ]
+    },
+    {
+      "data_category": "Microphone and camera (live call)",
+      "collection_basis": "permission_only",
+      "purpose": "Let others hear and see you during calls",
+      "recipients": "Other call participants",
+      "retention": "Not recorded unless you press Record; recordings stay on your device",
+      "evidence_ids": [
+        "P005"
+      ]
+    },
+    {
+      "data_category": "Call metadata",
+      "collection_basis": "stated",
+      "purpose": "Call history and abuse detection",
+      "recipients": "Cloud hosting provider",
+      "retention": "90 days",
+      "evidence_ids": [
+        "P006",
+        "P012"
+      ]
+    }
+  ],
+  "permission_purpose_map": [
+    {
+      "permission": "Microphone",
+      "feature": "Voice and video calls",
+      "scope": "Only when starting or joining a call",
+      "required_status": "required",
+      "assessment": "proportionate",
+      "rationale": "A calling app needs the microphone so others can hear you, and access is limited to calls.",
+      "alternatives": [
+        "Mute during calls",
+        "Turn off in phone settings when not needed"
+      ],
+      "evidence_ids": [
+        "P005"
+      ]
+    },
+    {
+      "permission": "Camera",
+      "feature": "Video calls",
+      "scope": "Only when starting or joining a call",
+      "required_status": "required",
+      "assessment": "proportionate",
+      "rationale": "Video calls need the camera, and access is tied to calls.",
+      "alternatives": [
+        "Join with camera off"
+      ],
+      "evidence_ids": [
+        "P005"
+      ]
+    }
+  ],
+  "consent_dimensions": [
+    {
+      "dimension_id": "purpose_clarity",
+      "status": "adequate",
+      "explanation": "Each data type is linked to a specific purpose.",
+      "evidence_ids": [
+        "P004",
+        "P005",
+        "P006"
+      ]
+    },
+    {
+      "dimension_id": "optional_separation",
+      "status": "adequate",
+      "explanation": "Marketing is a separate choice that does not affect calls.",
+      "evidence_ids": [
+        "P008"
+      ]
+    },
+    {
+      "dimension_id": "choice_granularity",
+      "status": "adequate",
+      "explanation": "Camera, microphone and marketing can each be controlled separately.",
+      "evidence_ids": [
+        "P014"
+      ]
+    },
+    {
+      "dimension_id": "affirmative_action",
+      "status": "unknown",
+      "explanation": "The notice says marketing is off unless switched on, but the consent screen itself was not supplied.",
+      "evidence_ids": [
+        "P008"
+      ]
+    },
+    {
+      "dimension_id": "withdrawal",
+      "status": "adequate",
+      "explanation": "Withdrawal routes for permissions and marketing are described.",
+      "evidence_ids": [
+        "P014"
+      ]
+    },
+    {
+      "dimension_id": "recipient_retention_transparency",
+      "status": "adequate",
+      "explanation": "The recipient type and retention periods are stated, though the provider is not named.",
+      "evidence_ids": [
+        "P010",
+        "P012"
+      ]
+    },
+    {
+      "dimension_id": "bundling_or_misleading",
+      "status": "adequate",
+      "explanation": "No bundling found: the text says declining marketing does not affect calls.",
+      "evidence_ids": [
+        "P008",
+        "P014"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "F01",
+      "rule_id": "CG-SH-02",
+      "rule_version": "1.0",
+      "title": "Hosting provider not named",
+      "severity": "low",
+      "confidence": "medium",
+      "explanation": "The recipient category is clear (a cloud host acting on instructions), but the provider and where it stores data are not named.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P010"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P010",
+          "quote": "We use a cloud hosting provider to run our service.",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S11"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [],
+      "recommended_action": "If it matters to you, ask MeetLoop which hosting provider it uses and where data is stored.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F02",
+      "rule_id": "CG-CN-04",
+      "rule_version": "1.0",
+      "title": "Marketing is a separate, optional choice",
+      "severity": "informational",
+      "confidence": "high",
+      "explanation": "Marketing messages need separate permission, are off by default according to the notice, and declining them does not affect calls.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P008"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P008",
+          "quote": "saying no does not affect your ability to make calls",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [],
+      "legal_applicability_status": "no_legal_reference",
+      "legal_applicability_note": "This is a governance heuristic with no linked legal source.",
+      "missing_context": [
+        "The consent screen, to confirm how the choice is shown"
+      ],
+      "recommended_action": "You can leave marketing switched off; the notice says calls are unaffected.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F03",
+      "rule_id": "CG-PO-01",
+      "rule_version": "1.0",
+      "title": "Microphone and camera tied to calls",
+      "severity": "informational",
+      "confidence": "high",
+      "explanation": "Access is requested only for calls, and calls are not recorded unless you choose to record.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P005"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P005",
+          "quote": "MeetLoop asks for microphone and camera access only when you start or join a call",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [],
+      "legal_applicability_status": "no_legal_reference",
+      "legal_applicability_note": "This is a governance heuristic with no linked legal source.",
+      "missing_context": [],
+      "recommended_action": "No action needed; you can still turn access off in phone settings between calls.",
+      "adjustments": []
+    }
+  ],
+  "targeted_questions": [
+    {
+      "question": "Which cloud provider hosts my data, and in which country?",
+      "why_it_matters": "Helps you understand where your call metadata is stored."
+    }
+  ],
+  "next_steps": [
+    {
+      "action": "Leave marketing switched off unless you want offers.",
+      "conditional": false
+    },
+    {
+      "action": "If your phone supports it, review camera and microphone access for MeetLoop in phone settings.",
+      "conditional": true
+    },
+    {
+      "action": "If it matters to you, ask MeetLoop which hosting provider it uses and where data is stored.",
+      "conditional": true
+    },
+    {
+      "action": "If you need a legal determination, ask a qualified privacy or legal professional; ConsentGuard does not provide one.",
+      "conditional": false
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "P001",
+      "text": "MeetLoop Privacy and Permissions Notice",
+      "page": null,
+      "paragraph_index": 1,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P002",
+      "text": "SYNTHETIC DEMONSTRATION DOCUMENT: MeetLoop is a fictional video-calling app invented for ConsentGuard demos. This is not a real policy.",
+      "page": null,
+      "paragraph_index": 2,
+      "section": "MeetLoop Privacy and Permissions Notice",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P003",
+      "text": "What we collect and why",
+      "page": null,
+      "paragraph_index": 3,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P004",
+      "text": "Account details: your name and mobile number, used to create your account and let contacts find you.",
+      "page": null,
+      "paragraph_index": 4,
+      "section": "What we collect and why",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P005",
+      "text": "Microphone and camera: MeetLoop asks for microphone and camera access only when you start or join a call, so that others on the call can hear and see you. We do not record calls unless you press the Record button, and recordings are stored on your device.",
+      "page": null,
+      "paragraph_index": 5,
+      "section": "What we collect and why",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P006",
+      "text": "Call metadata: the time, duration and participants of each call, used to show your call history and to detect abuse.",
+      "page": null,
+      "paragraph_index": 6,
+      "section": "What we collect and why",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P007",
+      "text": "Optional marketing messages",
+      "page": null,
+      "paragraph_index": 7,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P008",
+      "text": "With your separate permission, we may send you offers and product news by email or SMS. This choice is off unless you switch it on, and saying no does not affect your ability to make calls.",
+      "page": null,
+      "paragraph_index": 8,
+      "section": "Optional marketing messages",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P009",
+      "text": "Sharing",
+      "page": null,
+      "paragraph_index": 9,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P010",
+      "text": "We use a cloud hosting provider to run our service. It processes data only on our instructions. We do not sell your personal data.",
+      "page": null,
+      "paragraph_index": 10,
+      "section": "Sharing",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P011",
+      "text": "Retention",
+      "page": null,
+      "paragraph_index": 11,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P012",
+      "text": "Call metadata is kept for 90 days and then deleted. Account details are deleted within 30 days after you delete your account.",
+      "page": null,
+      "paragraph_index": 12,
+      "section": "Retention",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P013",
+      "text": "Withdrawing consent and your choices",
+      "page": null,
+      "paragraph_index": 13,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P014",
+      "text": "You can turn off camera or microphone access at any time in your phone settings, and turn off marketing messages under Settings > Notifications > Marketing. Turning off marketing does not affect calls.",
+      "page": null,
+      "paragraph_index": 14,
+      "section": "Withdrawing consent and your choices",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P015",
+      "text": "Contact",
+      "page": null,
+      "paragraph_index": 15,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P016",
+      "text": "Grievance Officer: privacy@meetloop.example",
+      "page": null,
+      "paragraph_index": 16,
+      "section": "Contact",
+      "source": "document"
+    }
+  ],
+  "legal_sources": [
+    {
+      "source_id": "LS-IN-DPDPA-COMMENCE",
+      "jurisdiction": "IN",
+      "source_type": "gazette_notification",
+      "title": "Notification G.S.R. 843(E) appointing commencement dates for the Digital Personal Data Protection Act, 2023",
+      "issuing_authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "official_url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+      "provision": "Paragraphs (a)-(c): phased commencement",
+      "publication_date": "2025-11-13",
+      "effective_date": "2025-11-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "On publication: s.1(2), s.2, ss.18-26, s.35, ss.38-43, s.44(1) and (3). One year after publication: s.6(9) and s.27(1)(d). Eighteen months after publication: ss.3-5, s.6(1)-(8) and (10), ss.7-17, s.27 (except (1)(d)), ss.28-34, 36, 37 and s.44(2).",
+      "applicability_notes": "Controls which DPDP Act duties are in force on a given date."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S11",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 11 - Right to access information",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 11(1)",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "A Data Principal who gave consent may request a summary of personal data processed and the identities of other Data Fiduciaries and Data Processors with whom it was shared.",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E)."
+    }
+  ],
+  "last_verification_date": "2026-10-08",
+  "rule_set_version": "1.0.0",
+  "limitations": [
+    "ConsentGuard explains and assesses the supplied text only. It does not know whether the organisation actually follows its policy.",
+    "This is a consumer-education prototype, not legal advice, a compliance certification, or a security scan.",
+    "Severity and confidence labels are prototype governance heuristics, not statutory classifications.",
+    "A privacy notice alone cannot show how a consent screen behaves (for example, whether boxes are pre-ticked).",
+    "Legal sources are limited to the India registry verified on the date shown; laws and commencement dates can change.",
+    "No consent-screen text was supplied, so interface behaviour was not assessed."
+  ],
+  "skills_run": [
+    {
+      "skill": "document-intake",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "16 paragraphs; parse quality good."
+    },
+    {
+      "skill": "evidence-extraction",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "plain-language-explanation",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "purpose-proportionality",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "consent-design-review",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "user-action-plan",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "jurisdiction-check",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "Legal sources attached from registry only."
+    },
+    {
+      "skill": "findings-prioritization",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "0 finding(s) adjusted by rule caps."
+    },
+    {
+      "skill": "report-and-qa",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "3 validation check(s) recorded."
+    }
+  ],
+  "validation": [
+    {
+      "check": "all finding evidence IDs exist",
+      "passed": true,
+      "detail": "3 reference(s) checked."
+    },
+    {
+      "check": "all retained quotes verified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "legal sources come from registry",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

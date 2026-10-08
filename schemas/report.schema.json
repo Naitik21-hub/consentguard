@@ -1,0 +1,1026 @@
+{
+  "$defs": {
+    "ConsentDimension": {
+      "additionalProperties": false,
+      "properties": {
+        "dimension_id": {
+          "enum": [
+            "purpose_clarity",
+            "optional_separation",
+            "choice_granularity",
+            "affirmative_action",
+            "withdrawal",
+            "recipient_retention_transparency",
+            "bundling_or_misleading"
+          ],
+          "title": "Dimension Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "adequate",
+            "concern",
+            "unknown",
+            "not_applicable"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "dimension_id",
+        "status",
+        "explanation"
+      ],
+      "title": "ConsentDimension",
+      "type": "object"
+    },
+    "DataInventoryItem": {
+      "additionalProperties": false,
+      "properties": {
+        "data_category": {
+          "title": "Data Category",
+          "type": "string"
+        },
+        "collection_basis": {
+          "default": "stated",
+          "enum": [
+            "stated",
+            "inferred",
+            "permission_only",
+            "unknown"
+          ],
+          "title": "Collection Basis",
+          "type": "string"
+        },
+        "purpose": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Purpose"
+        },
+        "recipients": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Recipients"
+        },
+        "retention": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retention"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "data_category"
+      ],
+      "title": "DataInventoryItem",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "rule_version": {
+          "title": "Rule Version",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "informational"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        },
+        "evidence_basis": {
+          "enum": [
+            "quoted",
+            "absence_in_supplied_text"
+          ],
+          "title": "Evidence Basis",
+          "type": "string"
+        },
+        "document_evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Document Evidence Ids",
+          "type": "array"
+        },
+        "quotes": {
+          "items": {
+            "$ref": "#/$defs/VerifiedQuote"
+          },
+          "title": "Quotes",
+          "type": "array"
+        },
+        "legal_source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Legal Source Ids",
+          "type": "array"
+        },
+        "legal_applicability_status": {
+          "enum": [
+            "verified_in_force",
+            "verified_not_yet_in_force",
+            "not_verified",
+            "not_applicable_jurisdiction",
+            "no_legal_reference"
+          ],
+          "title": "Legal Applicability Status",
+          "type": "string"
+        },
+        "legal_applicability_note": {
+          "title": "Legal Applicability Note",
+          "type": "string"
+        },
+        "missing_context": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Context",
+          "type": "array"
+        },
+        "recommended_action": {
+          "title": "Recommended Action",
+          "type": "string"
+        },
+        "adjustments": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Adjustments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "finding_id",
+        "rule_id",
+        "rule_version",
+        "title",
+        "severity",
+        "confidence",
+        "explanation",
+        "evidence_basis",
+        "document_evidence_ids",
+        "legal_applicability_status",
+        "legal_applicability_note",
+        "recommended_action"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "LegalSource": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "jurisdiction": {
+          "title": "Jurisdiction",
+          "type": "string"
+        },
+        "source_type": {
+          "title": "Source Type",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "issuing_authority": {
+          "title": "Issuing Authority",
+          "type": "string"
+        },
+        "official_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Official Url"
+        },
+        "provision": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Provision"
+        },
+        "publication_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Publication Date"
+        },
+        "effective_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Effective Date"
+        },
+        "verification_status": {
+          "enum": [
+            "verified",
+            "unavailable",
+            "superseded",
+            "needs_review"
+          ],
+          "title": "Verification Status",
+          "type": "string"
+        },
+        "retrieval_date": {
+          "title": "Retrieval Date",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "applicability_notes": {
+          "title": "Applicability Notes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "jurisdiction",
+        "source_type",
+        "title",
+        "issuing_authority",
+        "official_url",
+        "provision",
+        "publication_date",
+        "effective_date",
+        "verification_status",
+        "retrieval_date",
+        "summary",
+        "applicability_notes"
+      ],
+      "title": "LegalSource",
+      "type": "object"
+    },
+    "NextStep": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "conditional": {
+          "default": false,
+          "title": "Conditional",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "action"
+      ],
+      "title": "NextStep",
+      "type": "object"
+    },
+    "Paragraph": {
+      "additionalProperties": false,
+      "description": "One evidence unit. ``evidence_id`` is stable for a given input text.",
+      "properties": {
+        "evidence_id": {
+          "pattern": "^(P\\d{3,4}|C\\d{2,3})$",
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "paragraph_index": {
+          "title": "Paragraph Index",
+          "type": "integer"
+        },
+        "section": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section"
+        },
+        "source": {
+          "default": "document",
+          "enum": [
+            "document",
+            "consent_screen"
+          ],
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "text",
+        "paragraph_index"
+      ],
+      "title": "Paragraph",
+      "type": "object"
+    },
+    "PermissionInput": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "maxLength": 80,
+          "title": "Name",
+          "type": "string"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "required",
+            "optional",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "PermissionInput",
+      "type": "object"
+    },
+    "PermissionMapItem": {
+      "additionalProperties": false,
+      "properties": {
+        "permission": {
+          "title": "Permission",
+          "type": "string"
+        },
+        "feature": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Feature"
+        },
+        "scope": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scope"
+        },
+        "required_status": {
+          "default": "unknown",
+          "enum": [
+            "required",
+            "optional",
+            "unknown"
+          ],
+          "title": "Required Status",
+          "type": "string"
+        },
+        "assessment": {
+          "enum": [
+            "proportionate",
+            "needs_explanation",
+            "disproportionate",
+            "insufficient_information"
+          ],
+          "title": "Assessment",
+          "type": "string"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "alternatives": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "permission",
+        "assessment",
+        "rationale"
+      ],
+      "title": "PermissionMapItem",
+      "type": "object"
+    },
+    "PlainSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "data_collected": {
+          "items": {
+            "$ref": "#/$defs/SummaryPoint"
+          },
+          "title": "Data Collected",
+          "type": "array"
+        },
+        "purposes": {
+          "items": {
+            "$ref": "#/$defs/SummaryPoint"
+          },
+          "title": "Purposes",
+          "type": "array"
+        },
+        "recipients": {
+          "items": {
+            "$ref": "#/$defs/SummaryPoint"
+          },
+          "title": "Recipients",
+          "type": "array"
+        },
+        "retention": {
+          "items": {
+            "$ref": "#/$defs/SummaryPoint"
+          },
+          "title": "Retention",
+          "type": "array"
+        },
+        "choices_and_withdrawal": {
+          "items": {
+            "$ref": "#/$defs/SummaryPoint"
+          },
+          "title": "Choices And Withdrawal",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        }
+      },
+      "title": "PlainSummary",
+      "type": "object"
+    },
+    "SkillRun": {
+      "additionalProperties": false,
+      "properties": {
+        "skill": {
+          "title": "Skill",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "success",
+            "failed",
+            "skipped"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "executor": {
+          "enum": [
+            "code",
+            "model",
+            "fixture"
+          ],
+          "title": "Executor",
+          "type": "string"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "skill",
+        "version",
+        "status",
+        "executor"
+      ],
+      "title": "SkillRun",
+      "type": "object"
+    },
+    "SummaryPoint": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "basis": {
+          "default": "stated",
+          "enum": [
+            "stated",
+            "inferred",
+            "unknown"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "SummaryPoint",
+      "type": "object"
+    },
+    "SuppliedContext": {
+      "additionalProperties": false,
+      "properties": {
+        "service_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service Name"
+        },
+        "service_category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service Category"
+        },
+        "jurisdiction": {
+          "default": "IN",
+          "title": "Jurisdiction",
+          "type": "string"
+        },
+        "intended_feature": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Intended Feature"
+        },
+        "completeness": {
+          "default": "unknown",
+          "enum": [
+            "complete",
+            "excerpt",
+            "unknown"
+          ],
+          "title": "Completeness",
+          "type": "string"
+        },
+        "permissions": {
+          "items": {
+            "$ref": "#/$defs/PermissionInput"
+          },
+          "title": "Permissions",
+          "type": "array"
+        },
+        "consent_screen_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Consent Screen Text"
+        },
+        "policy_date_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Policy Date Version"
+        }
+      },
+      "title": "SuppliedContext",
+      "type": "object"
+    },
+    "TargetedQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "title": "Question",
+          "type": "string"
+        },
+        "why_it_matters": {
+          "title": "Why It Matters",
+          "type": "string"
+        }
+      },
+      "required": [
+        "question",
+        "why_it_matters"
+      ],
+      "title": "TargetedQuestion",
+      "type": "object"
+    },
+    "ValidationCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "check": {
+          "title": "Check",
+          "type": "string"
+        },
+        "passed": {
+          "title": "Passed",
+          "type": "boolean"
+        },
+        "detail": {
+          "default": "",
+          "title": "Detail",
+          "type": "string"
+        }
+      },
+      "required": [
+        "check",
+        "passed"
+      ],
+      "title": "ValidationCheck",
+      "type": "object"
+    },
+    "VerifiedQuote": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        },
+        "verified": {
+          "title": "Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "quote",
+        "verified"
+      ],
+      "title": "VerifiedQuote",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "report_id": {
+      "title": "Report Id",
+      "type": "string"
+    },
+    "analyzed_at": {
+      "title": "Analyzed At",
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "demo",
+        "live"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "mode_note": {
+      "title": "Mode Note",
+      "type": "string"
+    },
+    "model_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Id"
+    },
+    "document_title": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Document Title"
+    },
+    "document_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Document Version"
+    },
+    "jurisdiction": {
+      "title": "Jurisdiction",
+      "type": "string"
+    },
+    "supplied_context": {
+      "$ref": "#/$defs/SuppliedContext"
+    },
+    "completeness": {
+      "enum": [
+        "complete",
+        "excerpt",
+        "unknown"
+      ],
+      "title": "Completeness",
+      "type": "string"
+    },
+    "extraction_warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Extraction Warnings",
+      "type": "array"
+    },
+    "overall_assessment": {
+      "enum": [
+        "substantial_concerns",
+        "clarification_needed",
+        "no_major_concerns",
+        "insufficient_information"
+      ],
+      "title": "Overall Assessment",
+      "type": "string"
+    },
+    "overall_assessment_label": {
+      "title": "Overall Assessment Label",
+      "type": "string"
+    },
+    "overall_rationale": {
+      "title": "Overall Rationale",
+      "type": "string"
+    },
+    "plain_english_summary": {
+      "$ref": "#/$defs/PlainSummary"
+    },
+    "data_inventory": {
+      "items": {
+        "$ref": "#/$defs/DataInventoryItem"
+      },
+      "title": "Data Inventory",
+      "type": "array"
+    },
+    "permission_purpose_map": {
+      "items": {
+        "$ref": "#/$defs/PermissionMapItem"
+      },
+      "title": "Permission Purpose Map",
+      "type": "array"
+    },
+    "consent_dimensions": {
+      "items": {
+        "$ref": "#/$defs/ConsentDimension"
+      },
+      "title": "Consent Dimensions",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "title": "Findings",
+      "type": "array"
+    },
+    "targeted_questions": {
+      "items": {
+        "$ref": "#/$defs/TargetedQuestion"
+      },
+      "title": "Targeted Questions",
+      "type": "array"
+    },
+    "next_steps": {
+      "items": {
+        "$ref": "#/$defs/NextStep"
+      },
+      "title": "Next Steps",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Paragraph"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "legal_sources": {
+      "items": {
+        "$ref": "#/$defs/LegalSource"
+      },
+      "title": "Legal Sources",
+      "type": "array"
+    },
+    "last_verification_date": {
+      "title": "Last Verification Date",
+      "type": "string"
+    },
+    "rule_set_version": {
+      "title": "Rule Set Version",
+      "type": "string"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "skills_run": {
+      "items": {
+        "$ref": "#/$defs/SkillRun"
+      },
+      "title": "Skills Run",
+      "type": "array"
+    },
+    "validation": {
+      "items": {
+        "$ref": "#/$defs/ValidationCheck"
+      },
+      "title": "Validation",
+      "type": "array"
+    }
+  },
+  "required": [
+    "report_id",
+    "analyzed_at",
+    "mode",
+    "mode_note",
+    "document_title",
+    "document_version",
+    "jurisdiction",
+    "supplied_context",
+    "completeness",
+    "extraction_warnings",
+    "overall_assessment",
+    "overall_assessment_label",
+    "overall_rationale",
+    "plain_english_summary",
+    "data_inventory",
+    "permission_purpose_map",
+    "consent_dimensions",
+    "findings",
+    "targeted_questions",
+    "next_steps",
+    "evidence",
+    "legal_sources",
+    "last_verification_date",
+    "rule_set_version",
+    "limitations",
+    "skills_run",
+    "validation"
+  ],
+  "title": "Report",
+  "type": "object"
+}

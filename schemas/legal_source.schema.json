@@ -1,0 +1,108 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "jurisdiction": {
+      "title": "Jurisdiction",
+      "type": "string"
+    },
+    "source_type": {
+      "title": "Source Type",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "issuing_authority": {
+      "title": "Issuing Authority",
+      "type": "string"
+    },
+    "official_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Official Url"
+    },
+    "provision": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Provision"
+    },
+    "publication_date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Publication Date"
+    },
+    "effective_date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Effective Date"
+    },
+    "verification_status": {
+      "enum": [
+        "verified",
+        "unavailable",
+        "superseded",
+        "needs_review"
+      ],
+      "title": "Verification Status",
+      "type": "string"
+    },
+    "retrieval_date": {
+      "title": "Retrieval Date",
+      "type": "string"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "applicability_notes": {
+      "title": "Applicability Notes",
+      "type": "string"
+    }
+  },
+  "required": [
+    "source_id",
+    "jurisdiction",
+    "source_type",
+    "title",
+    "issuing_authority",
+    "official_url",
+    "provision",
+    "publication_date",
+    "effective_date",
+    "verification_status",
+    "retrieval_date",
+    "summary",
+    "applicability_notes"
+  ],
+  "title": "LegalSource",
+  "type": "object"
+}

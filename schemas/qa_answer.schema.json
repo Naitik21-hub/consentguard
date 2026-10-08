@@ -1,0 +1,84 @@
+{
+  "$defs": {
+    "VerifiedQuote": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        },
+        "verified": {
+          "title": "Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "quote",
+        "verified"
+      ],
+      "title": "VerifiedQuote",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "question": {
+      "title": "Question",
+      "type": "string"
+    },
+    "answer": {
+      "title": "Answer",
+      "type": "string"
+    },
+    "answer_type": {
+      "enum": [
+        "answered_from_document",
+        "not_in_document",
+        "general_guidance",
+        "unverified"
+      ],
+      "title": "Answer Type",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "quotes": {
+      "items": {
+        "$ref": "#/$defs/VerifiedQuote"
+      },
+      "title": "Quotes",
+      "type": "array"
+    },
+    "method": {
+      "enum": [
+        "live_model",
+        "keyword_retrieval"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "note": {
+      "default": "",
+      "title": "Note",
+      "type": "string"
+    }
+  },
+  "required": [
+    "question",
+    "answer",
+    "answer_type",
+    "method"
+  ],
+  "title": "QAAnswer",
+  "type": "object"
+}

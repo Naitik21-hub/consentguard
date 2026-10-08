@@ -1,0 +1,628 @@
+{
+  "report_id": "CG-9AAB0E35C5",
+  "analyzed_at": "2026-10-08T10:29:14+00:00",
+  "mode": "demo",
+  "mode_note": "DEMO: pre-authored demonstration output for a synthetic document, validated by the live pipeline. Not live AI analysis.",
+  "model_id": null,
+  "document_title": "FitPulse Privacy Notice (synthetic)",
+  "document_version": null,
+  "jurisdiction": "IN",
+  "supplied_context": {
+    "service_name": "FitPulse",
+    "service_category": "fitness tracking",
+    "jurisdiction": "IN",
+    "intended_feature": "activity tracking",
+    "completeness": "complete",
+    "permissions": [
+      {
+        "name": "Wearable heart-rate sync",
+        "status": "optional"
+      }
+    ],
+    "consent_screen_text": null,
+    "policy_date_version": null
+  },
+  "completeness": "complete",
+  "extraction_warnings": [],
+  "overall_assessment": "substantial_concerns",
+  "overall_assessment_label": "Substantial concerns found",
+  "overall_rationale": "1 high-severity finding(s) are supported by quoted text (F01).",
+  "plain_english_summary": {
+    "data_collected": [
+      {
+        "text": "Age, height, weight, steps, heart rate, sleep patterns and, if you choose to log it, menstrual cycle information.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P004"
+        ]
+      },
+      {
+        "text": "Continuous heart-rate readings if you connect a wearable.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P005"
+        ]
+      }
+    ],
+    "purposes": [
+      {
+        "text": "Showing fitness trends and personalised workout suggestions.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P007"
+        ]
+      },
+      {
+        "text": "Partners, including insurers, may use your data to offer personalised plans and premiums.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P009"
+        ]
+      }
+    ],
+    "recipients": [
+      {
+        "text": "Wellness partners, including insurance companies, receive health and activity data.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P009"
+        ]
+      },
+      {
+        "text": "Research organisations receive aggregated statistics that FitPulse says do not identify you.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P010"
+        ]
+      }
+    ],
+    "retention": [
+      {
+        "text": "Kept while your account is active and for 2 years after your last login.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P012"
+        ]
+      }
+    ],
+    "choices_and_withdrawal": [
+      {
+        "text": "You can stop wearable syncing in settings and delete your account by email. No choice about partner sharing is described.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P014"
+        ]
+      }
+    ],
+    "unknowns": [
+      "Whether sharing with insurers is optional or can be refused.",
+      "Which insurers or partners receive data.",
+      "Whether partners delete data when you leave FitPulse."
+    ]
+  },
+  "data_inventory": [
+    {
+      "data_category": "Body measurements, steps, heart rate, sleep",
+      "collection_basis": "stated",
+      "purpose": "Fitness trends and suggestions; partner offers and premiums",
+      "recipients": "Wellness partners including insurers",
+      "retention": "Account life + 2 years after last login",
+      "evidence_ids": [
+        "P004",
+        "P007",
+        "P009",
+        "P012"
+      ]
+    },
+    {
+      "data_category": "Menstrual cycle information (optional logging)",
+      "collection_basis": "stated",
+      "purpose": "Fitness trends (implied); possibly partner sharing as 'health data'",
+      "recipients": "Possibly wellness partners including insurers",
+      "retention": "Account life + 2 years after last login",
+      "evidence_ids": [
+        "P004",
+        "P009"
+      ]
+    },
+    {
+      "data_category": "Continuous heart rate from wearable",
+      "collection_basis": "stated",
+      "purpose": "Fitness trends",
+      "recipients": "Possibly wellness partners",
+      "retention": "Account life + 2 years after last login",
+      "evidence_ids": [
+        "P005",
+        "P012"
+      ]
+    }
+  ],
+  "permission_purpose_map": [
+    {
+      "permission": "Wearable heart-rate sync",
+      "feature": "Fitness tracking",
+      "scope": "Continuous while connected",
+      "required_status": "optional",
+      "assessment": "proportionate",
+      "rationale": "Continuous heart rate fits a fitness-tracking feature you choose to connect, and syncing can be stopped in settings.",
+      "alternatives": [
+        "Do not connect a wearable",
+        "Stop syncing in Settings > Devices"
+      ],
+      "evidence_ids": [
+        "P005",
+        "P014"
+      ]
+    },
+    {
+      "permission": "Sharing health data with insurers",
+      "feature": "Partner plans and premiums",
+      "scope": "Health and activity data",
+      "required_status": "unknown",
+      "assessment": "needs_explanation",
+      "rationale": "Insurer use is a separate purpose from fitness tracking and could affect your premiums. The notice gives no separate choice.",
+      "alternatives": [
+        "Separate opt-in for insurer sharing",
+        "Share only aggregated data"
+      ],
+      "evidence_ids": [
+        "P009"
+      ]
+    }
+  ],
+  "consent_dimensions": [
+    {
+      "dimension_id": "purpose_clarity",
+      "status": "adequate",
+      "explanation": "Purposes are specific, including the insurer purpose.",
+      "evidence_ids": [
+        "P007",
+        "P009"
+      ]
+    },
+    {
+      "dimension_id": "optional_separation",
+      "status": "concern",
+      "explanation": "Insurer sharing is not described as optional.",
+      "evidence_ids": [
+        "P009"
+      ]
+    },
+    {
+      "dimension_id": "choice_granularity",
+      "status": "concern",
+      "explanation": "Choices exist for wearable syncing, but none for partner sharing.",
+      "evidence_ids": [
+        "P014"
+      ]
+    },
+    {
+      "dimension_id": "affirmative_action",
+      "status": "unknown",
+      "explanation": "The consent screen was not supplied.",
+      "evidence_ids": []
+    },
+    {
+      "dimension_id": "withdrawal",
+      "status": "concern",
+      "explanation": "You can stop syncing or delete your account, but the notice gives no route to stop partner sharing.",
+      "evidence_ids": [
+        "P014"
+      ]
+    },
+    {
+      "dimension_id": "recipient_retention_transparency",
+      "status": "concern",
+      "explanation": "Retention is stated, but partners are described only by type.",
+      "evidence_ids": [
+        "P009",
+        "P012"
+      ]
+    },
+    {
+      "dimension_id": "bundling_or_misleading",
+      "status": "unknown",
+      "explanation": "It is unclear whether partner sharing is a condition of using the app.",
+      "evidence_ids": []
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "F01",
+      "rule_id": "CG-SH-01",
+      "rule_version": "1.0",
+      "title": "Health data shared with insurers, with no separate choice described",
+      "severity": "high",
+      "confidence": "high",
+      "explanation": "The notice says health and activity data is shared with partners including insurers, who may use it for premiums, and describes no way to refuse this while still using the app.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P009",
+        "P014"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P009",
+          "quote": "We share your health and activity data with wellness partners, including insurance companies, who may use it to offer you personalised plans and premiums.",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S6"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "Whether the app asks for separate agreement before insurer sharing"
+      ],
+      "recommended_action": "Ask FitPulse whether insurer sharing is optional and how to switch it off. Check the app's settings for a partner-sharing choice before logging sensitive data.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F02",
+      "rule_id": "CG-SN-01",
+      "rule_version": "1.0",
+      "title": "Sensitive-in-context health information",
+      "severity": "medium",
+      "confidence": "high",
+      "explanation": "Heart rate, sleep and menstrual cycle data are things many people consider sensitive, especially when they may reach insurers. This is a general sensitivity concern. ConsentGuard does not decide how the law classifies this data.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P004",
+        "P009"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P004",
+          "quote": "if you choose to log it, menstrual cycle information",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [],
+      "legal_applicability_status": "no_legal_reference",
+      "legal_applicability_note": "This is a governance heuristic with no linked legal source.",
+      "missing_context": [],
+      "recommended_action": "Consider logging only the data you need; menstrual cycle logging is described as optional.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F03",
+      "rule_id": "CG-CN-02",
+      "rule_version": "1.0",
+      "title": "No route to stop partner sharing",
+      "severity": "medium",
+      "confidence": "medium",
+      "explanation": "The notice explains how to stop wearable syncing and delete your account, but not how to withdraw from partner sharing.",
+      "evidence_basis": "absence_in_supplied_text",
+      "document_evidence_ids": [],
+      "quotes": [],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S6",
+        "LS-IN-DPDP-RULE3"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [
+        "In-app privacy settings"
+      ],
+      "recommended_action": "Ask how to withdraw from partner sharing without deleting your account.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F04",
+      "rule_id": "CG-PO-01",
+      "rule_version": "1.0",
+      "title": "Retention period and research aggregation are stated",
+      "severity": "informational",
+      "confidence": "high",
+      "explanation": "The notice gives a concrete retention period and says research partners receive only aggregated statistics.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P010",
+        "P012"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P012",
+          "quote": "for 2 years after your last login",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [],
+      "legal_applicability_status": "no_legal_reference",
+      "legal_applicability_note": "This is a governance heuristic with no linked legal source.",
+      "missing_context": [],
+      "recommended_action": "No action needed for this point.",
+      "adjustments": []
+    }
+  ],
+  "targeted_questions": [
+    {
+      "question": "Is sharing my health data with insurance companies optional? How do I turn it off?",
+      "why_it_matters": "Insurer use could affect the price or terms you are offered."
+    },
+    {
+      "question": "Which insurers receive my data, and do they delete it if I stop using FitPulse?",
+      "why_it_matters": "Onward recipients may keep data longer than FitPulse does."
+    }
+  ],
+  "next_steps": [
+    {
+      "action": "Before logging menstrual or other sensitive data, check whether partner sharing can be switched off.",
+      "conditional": true
+    },
+    {
+      "action": "If you connect a wearable, remember you can stop syncing in Settings > Devices.",
+      "conditional": false
+    },
+    {
+      "action": "Ask FitPulse whether insurer sharing is optional and how to switch it off. Check the app's settings for a partner-sharing choice before logging sensitive data.",
+      "conditional": true
+    },
+    {
+      "action": "Consider logging only the data you need; menstrual cycle logging is described as optional.",
+      "conditional": true
+    },
+    {
+      "action": "Ask how to withdraw from partner sharing without deleting your account.",
+      "conditional": true
+    },
+    {
+      "action": "If you need a legal determination, ask a qualified privacy or legal professional; ConsentGuard does not provide one.",
+      "conditional": false
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "P001",
+      "text": "FitPulse Privacy Notice",
+      "page": null,
+      "paragraph_index": 1,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P002",
+      "text": "SYNTHETIC DEMONSTRATION DOCUMENT: FitPulse is a fictional fitness app invented for ConsentGuard demos. This is not a real policy.",
+      "page": null,
+      "paragraph_index": 2,
+      "section": "FitPulse Privacy Notice",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P003",
+      "text": "Data we collect",
+      "page": null,
+      "paragraph_index": 3,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P004",
+      "text": "FitPulse collects your age, height, weight, step count, heart rate, sleep patterns and, if you choose to log it, menstrual cycle information.",
+      "page": null,
+      "paragraph_index": 4,
+      "section": "Data we collect",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P005",
+      "text": "If you connect a wearable device, we receive continuous heart-rate readings from it.",
+      "page": null,
+      "paragraph_index": 5,
+      "section": "Data we collect",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P006",
+      "text": "How we use it",
+      "page": null,
+      "paragraph_index": 6,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P007",
+      "text": "We use this data to show your fitness trends and give personalised workout suggestions.",
+      "page": null,
+      "paragraph_index": 7,
+      "section": "How we use it",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P008",
+      "text": "Sharing with partners",
+      "page": null,
+      "paragraph_index": 8,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P009",
+      "text": "We share your health and activity data with wellness partners, including insurance companies, who may use it to offer you personalised plans and premiums.",
+      "page": null,
+      "paragraph_index": 9,
+      "section": "Sharing with partners",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P010",
+      "text": "We share aggregated statistics that do not identify you with research organisations.",
+      "page": null,
+      "paragraph_index": 10,
+      "section": "Sharing with partners",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P011",
+      "text": "Retention",
+      "page": null,
+      "paragraph_index": 11,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P012",
+      "text": "We keep your health data while your account is active and for 2 years after your last login.",
+      "page": null,
+      "paragraph_index": 12,
+      "section": "Retention",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P013",
+      "text": "Your choices",
+      "page": null,
+      "paragraph_index": 13,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P014",
+      "text": "You can stop wearable syncing at any time in Settings > Devices. To delete your account, email support@fitpulse.example.",
+      "page": null,
+      "paragraph_index": 14,
+      "section": "Your choices",
+      "source": "document"
+    }
+  ],
+  "legal_sources": [
+    {
+      "source_id": "LS-IN-DPDPA-COMMENCE",
+      "jurisdiction": "IN",
+      "source_type": "gazette_notification",
+      "title": "Notification G.S.R. 843(E) appointing commencement dates for the Digital Personal Data Protection Act, 2023",
+      "issuing_authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "official_url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+      "provision": "Paragraphs (a)-(c): phased commencement",
+      "publication_date": "2025-11-13",
+      "effective_date": "2025-11-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "On publication: s.1(2), s.2, ss.18-26, s.35, ss.38-43, s.44(1) and (3). One year after publication: s.6(9) and s.27(1)(d). Eighteen months after publication: ss.3-5, s.6(1)-(8) and (10), ss.7-17, s.27 (except (1)(d)), ss.28-34, 36, 37 and s.44(2).",
+      "applicability_notes": "Controls which DPDP Act duties are in force on a given date."
+    },
+    {
+      "source_id": "LS-IN-DPDP-RULE3",
+      "jurisdiction": "IN",
+      "source_type": "rules",
+      "title": "Digital Personal Data Protection Rules, 2025, rule 3 - Notice given by Data Fiduciary",
+      "issuing_authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "official_url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf",
+      "provision": "Rule 3",
+      "publication_date": "2025-11-13",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "The notice must be understandable independently of other information; give in clear and plain language an itemised description of personal data and the specified purpose(s); and give a link and other means to withdraw consent with ease comparable to giving it, exercise rights, and complain to the Board.",
+      "applicability_notes": "Commences eighteen months after publication of the Rules."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S6",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 6 - Consent",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 6(1)-(8) and (10)",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "Consent must be free, specific, informed, unconditional and unambiguous with a clear affirmative action, limited to data necessary for the specified purpose (6(1)); illustration: contact-list access is not necessary for a telemedicine service. Withdrawal must be comparable in ease to giving consent (6(4)).",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E). Relevant only where consent is the basis of processing."
+    }
+  ],
+  "last_verification_date": "2026-10-08",
+  "rule_set_version": "1.0.0",
+  "limitations": [
+    "ConsentGuard explains and assesses the supplied text only. It does not know whether the organisation actually follows its policy.",
+    "This is a consumer-education prototype, not legal advice, a compliance certification, or a security scan.",
+    "Severity and confidence labels are prototype governance heuristics, not statutory classifications.",
+    "A privacy notice alone cannot show how a consent screen behaves (for example, whether boxes are pre-ticked).",
+    "Legal sources are limited to the India registry verified on the date shown; laws and commencement dates can change.",
+    "No consent-screen text was supplied, so interface behaviour was not assessed."
+  ],
+  "skills_run": [
+    {
+      "skill": "document-intake",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "14 paragraphs; parse quality good."
+    },
+    {
+      "skill": "evidence-extraction",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "plain-language-explanation",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "purpose-proportionality",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "consent-design-review",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "user-action-plan",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "jurisdiction-check",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "Legal sources attached from registry only."
+    },
+    {
+      "skill": "findings-prioritization",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "0 finding(s) adjusted by rule caps."
+    },
+    {
+      "skill": "report-and-qa",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "3 validation check(s) recorded."
+    }
+  ],
+  "validation": [
+    {
+      "check": "all finding evidence IDs exist",
+      "passed": true,
+      "detail": "6 reference(s) checked."
+    },
+    {
+      "check": "all retained quotes verified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "legal sources come from registry",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "$defs": {
+    "Paragraph": {
+      "additionalProperties": false,
+      "description": "One evidence unit. ``evidence_id`` is stable for a given input text.",
+      "properties": {
+        "evidence_id": {
+          "pattern": "^(P\\d{3,4}|C\\d{2,3})$",
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "paragraph_index": {
+          "title": "Paragraph Index",
+          "type": "integer"
+        },
+        "section": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section"
+        },
+        "source": {
+          "default": "document",
+          "enum": [
+            "document",
+            "consent_screen"
+          ],
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "text",
+        "paragraph_index"
+      ],
+      "title": "Paragraph",
+      "type": "object"
+    }
+  },
+  "items": {
+    "$ref": "#/$defs/Paragraph"
+  },
+  "type": "array"
+}

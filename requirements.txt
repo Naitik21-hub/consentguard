@@ -1,0 +1,7 @@
+# Versions verified installed and tested on 2026-10-08 (Python 3.12).
+streamlit>=1.65,<2
+anthropic>=1.12,<2
+pydantic>=2.13,<3
+pypdf>=6.19,<7
+pytest>=9.1,<10
+jsonschema>=4.26,<5

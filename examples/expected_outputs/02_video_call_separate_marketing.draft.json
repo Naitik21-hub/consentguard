@@ -1,0 +1,58 @@
+{
+  "document_title": "MeetLoop Privacy and Permissions Notice (synthetic)",
+  "document_version": "Synthetic v1 (2026)",
+  "plain_english_summary": {
+    "data_collected": [
+      {"text": "Name and mobile number for your account.", "basis": "stated", "evidence_ids": ["P004"]},
+      {"text": "Microphone and camera access, requested only when you start or join a call.", "basis": "stated", "evidence_ids": ["P005"]},
+      {"text": "Call metadata: time, duration and participants of each call.", "basis": "stated", "evidence_ids": ["P006"]}
+    ],
+    "purposes": [
+      {"text": "Running calls, showing call history and detecting abuse.", "basis": "stated", "evidence_ids": ["P005", "P006"]},
+      {"text": "Optional offers and product news, only if you switch this on.", "basis": "stated", "evidence_ids": ["P008"]}
+    ],
+    "recipients": [
+      {"text": "A cloud hosting provider that processes data on MeetLoop's instructions. MeetLoop says it does not sell personal data.", "basis": "stated", "evidence_ids": ["P010"]}
+    ],
+    "retention": [
+      {"text": "Call metadata for 90 days; account details deleted within 30 days after you delete your account. Recordings stay on your device.", "basis": "stated", "evidence_ids": ["P012", "P005"]}
+    ],
+    "choices_and_withdrawal": [
+      {"text": "Turn off camera or microphone in phone settings and marketing under Settings > Notifications > Marketing. Turning marketing off does not affect calls.", "basis": "stated", "evidence_ids": ["P014", "P008"]}
+    ],
+    "unknowns": [
+      "The name and location of the cloud hosting provider.",
+      "How the marketing choice is presented on screen (consent screen not supplied)."
+    ]
+  },
+  "data_inventory": [
+    {"data_category": "Name, mobile number", "collection_basis": "stated", "purpose": "Account and contact discovery", "recipients": "Cloud hosting provider", "retention": "Deleted within 30 days after account deletion", "evidence_ids": ["P004", "P010", "P012"]},
+    {"data_category": "Microphone and camera (live call)", "collection_basis": "permission_only", "purpose": "Let others hear and see you during calls", "recipients": "Other call participants", "retention": "Not recorded unless you press Record; recordings stay on your device", "evidence_ids": ["P005"]},
+    {"data_category": "Call metadata", "collection_basis": "stated", "purpose": "Call history and abuse detection", "recipients": "Cloud hosting provider", "retention": "90 days", "evidence_ids": ["P006", "P012"]}
+  ],
+  "permission_purpose_map": [
+    {"permission": "Microphone", "feature": "Voice and video calls", "scope": "Only when starting or joining a call", "required_status": "required", "assessment": "proportionate", "rationale": "A calling app needs the microphone so others can hear you, and access is limited to calls.", "alternatives": ["Mute during calls", "Turn off in phone settings when not needed"], "evidence_ids": ["P005"]},
+    {"permission": "Camera", "feature": "Video calls", "scope": "Only when starting or joining a call", "required_status": "required", "assessment": "proportionate", "rationale": "Video calls need the camera, and access is tied to calls.", "alternatives": ["Join with camera off"], "evidence_ids": ["P005"]}
+  ],
+  "consent_dimensions": [
+    {"dimension_id": "purpose_clarity", "status": "adequate", "explanation": "Each data type is linked to a specific purpose.", "evidence_ids": ["P004", "P005", "P006"]},
+    {"dimension_id": "optional_separation", "status": "adequate", "explanation": "Marketing is a separate choice that does not affect calls.", "evidence_ids": ["P008"]},
+    {"dimension_id": "choice_granularity", "status": "adequate", "explanation": "Camera, microphone and marketing can each be controlled separately.", "evidence_ids": ["P014"]},
+    {"dimension_id": "affirmative_action", "status": "unknown", "explanation": "The notice says marketing is off unless switched on, but the consent screen itself was not supplied.", "evidence_ids": ["P008"]},
+    {"dimension_id": "withdrawal", "status": "adequate", "explanation": "Withdrawal routes for permissions and marketing are described.", "evidence_ids": ["P014"]},
+    {"dimension_id": "recipient_retention_transparency", "status": "adequate", "explanation": "The recipient type and retention periods are stated, though the provider is not named.", "evidence_ids": ["P010", "P012"]},
+    {"dimension_id": "bundling_or_misleading", "status": "adequate", "explanation": "No bundling found: the text says declining marketing does not affect calls.", "evidence_ids": ["P008", "P014"]}
+  ],
+  "findings": [
+    {"rule_id": "CG-CN-04", "severity": "informational", "confidence": "high", "title": "Marketing is a separate, optional choice", "explanation": "Marketing messages need separate permission, are off by default according to the notice, and declining them does not affect calls.", "evidence_ids": ["P008"], "quotes": [{"evidence_id": "P008", "quote": "saying no does not affect your ability to make calls"}], "missing_context": ["The consent screen, to confirm how the choice is shown"], "recommended_action": "You can leave marketing switched off; the notice says calls are unaffected."},
+    {"rule_id": "CG-PO-01", "severity": "informational", "confidence": "high", "title": "Microphone and camera tied to calls", "explanation": "Access is requested only for calls, and calls are not recorded unless you choose to record.", "evidence_ids": ["P005"], "quotes": [{"evidence_id": "P005", "quote": "MeetLoop asks for microphone and camera access only when you start or join a call"}], "missing_context": [], "recommended_action": "No action needed; you can still turn access off in phone settings between calls."},
+    {"rule_id": "CG-SH-02", "severity": "low", "confidence": "medium", "title": "Hosting provider not named", "explanation": "The recipient category is clear (a cloud host acting on instructions), but the provider and where it stores data are not named.", "evidence_ids": ["P010"], "quotes": [{"evidence_id": "P010", "quote": "We use a cloud hosting provider to run our service."}], "missing_context": [], "recommended_action": "If it matters to you, ask MeetLoop which hosting provider it uses and where data is stored."}
+  ],
+  "targeted_questions": [
+    {"question": "Which cloud provider hosts my data, and in which country?", "why_it_matters": "Helps you understand where your call metadata is stored."}
+  ],
+  "next_steps": [
+    {"action": "Leave marketing switched off unless you want offers.", "conditional": false},
+    {"action": "If your phone supports it, review camera and microphone access for MeetLoop in phone settings.", "conditional": true}
+  ]
+}

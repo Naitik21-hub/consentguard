@@ -1,0 +1,568 @@
+{
+  "report_id": "CG-6D2B5C6CEA",
+  "analyzed_at": "2026-10-08T10:29:14+00:00",
+  "mode": "demo",
+  "mode_note": "DEMO: pre-authored demonstration output for a synthetic document, validated by the live pipeline. Not live AI analysis.",
+  "model_id": null,
+  "document_title": "Kitaab Library App: Privacy Notice (synthetic)",
+  "document_version": "Synthetic v2 (2026)",
+  "jurisdiction": "IN",
+  "supplied_context": {
+    "service_name": "Kitaab",
+    "service_category": "public library",
+    "jurisdiction": "IN",
+    "intended_feature": "borrowing e-books",
+    "completeness": "complete",
+    "permissions": [],
+    "consent_screen_text": "Recommendations: Off (switch).\n\nSwitch on to get book suggestions based on your borrowing history. You can switch this off at any time in Settings. Borrowing works the same either way.",
+    "policy_date_version": "Synthetic v2 (2026)"
+  },
+  "completeness": "complete",
+  "extraction_warnings": [],
+  "overall_assessment": "no_major_concerns",
+  "overall_assessment_label": "No major concerns found in supplied text",
+  "overall_rationale": "No high- or medium-severity concerns were supported by the supplied text. This covers only what the text says, not how the organisation behaves in practice.",
+  "plain_english_summary": {
+    "data_collected": [
+      {
+        "text": "Only your name, library card number and email address. No location, contacts, camera or microphone access.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P004",
+          "P005"
+        ]
+      },
+      {
+        "text": "Borrowing history.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P007"
+        ]
+      }
+    ],
+    "purposes": [
+      {
+        "text": "Borrowing e-books, showing current loans and sending due-date reminders. Not used for advertising or profiling.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P004",
+          "P007"
+        ]
+      },
+      {
+        "text": "Optional book recommendations, only if you switch them on.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P009"
+        ]
+      }
+    ],
+    "recipients": [
+      {
+        "text": "An email delivery provider, only to send reminders. Data is not sold or shared for marketing.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P011"
+        ]
+      }
+    ],
+    "retention": [
+      {
+        "text": "Loan records are deleted 30 days after return; remaining data within 30 days of closing your account.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P013"
+        ]
+      }
+    ],
+    "choices_and_withdrawal": [
+      {
+        "text": "Recommendations are off by default and can be switched off in Settings as easily as they were switched on. A grievance officer is named.",
+        "basis": "stated",
+        "evidence_ids": [
+          "P009",
+          "P015",
+          "C01",
+          "C02"
+        ]
+      }
+    ],
+    "unknowns": [
+      "Which email delivery provider is used.",
+      "Whether the app behaves as the notice describes (ConsentGuard cannot check this)."
+    ]
+  },
+  "data_inventory": [
+    {
+      "data_category": "Name, library card number, email",
+      "collection_basis": "stated",
+      "purpose": "Borrowing and due-date reminders",
+      "recipients": "Email delivery provider (email only)",
+      "retention": "Within 30 days of account closure",
+      "evidence_ids": [
+        "P004",
+        "P011",
+        "P013"
+      ]
+    },
+    {
+      "data_category": "Borrowing history",
+      "collection_basis": "stated",
+      "purpose": "Current loans, reminders; optional recommendations",
+      "recipients": null,
+      "retention": "Loan records deleted 30 days after return",
+      "evidence_ids": [
+        "P007",
+        "P009",
+        "P013"
+      ]
+    }
+  ],
+  "permission_purpose_map": [
+    {
+      "permission": "Location, contacts, camera, microphone",
+      "feature": "None needed",
+      "scope": "Not requested",
+      "required_status": "unknown",
+      "assessment": "proportionate",
+      "rationale": "The notice says these permissions are not requested, which fits a library app.",
+      "alternatives": [],
+      "evidence_ids": [
+        "P005"
+      ]
+    }
+  ],
+  "consent_dimensions": [
+    {
+      "dimension_id": "purpose_clarity",
+      "status": "adequate",
+      "explanation": "Each data item is tied to a specific purpose.",
+      "evidence_ids": [
+        "P004",
+        "P007"
+      ]
+    },
+    {
+      "dimension_id": "optional_separation",
+      "status": "adequate",
+      "explanation": "Recommendations are separate from borrowing.",
+      "evidence_ids": [
+        "P009"
+      ]
+    },
+    {
+      "dimension_id": "choice_granularity",
+      "status": "adequate",
+      "explanation": "The optional use has its own switch.",
+      "evidence_ids": [
+        "P009",
+        "C01"
+      ]
+    },
+    {
+      "dimension_id": "affirmative_action",
+      "status": "adequate",
+      "explanation": "The supplied consent-screen text shows recommendations off by default, with a switch to turn them on.",
+      "evidence_ids": [
+        "C01",
+        "C02"
+      ]
+    },
+    {
+      "dimension_id": "withdrawal",
+      "status": "adequate",
+      "explanation": "Withdrawal is in Settings and described as being as easy as switching on.",
+      "evidence_ids": [
+        "P015",
+        "C02"
+      ]
+    },
+    {
+      "dimension_id": "recipient_retention_transparency",
+      "status": "adequate",
+      "explanation": "The recipient type and retention periods are stated.",
+      "evidence_ids": [
+        "P011",
+        "P013"
+      ]
+    },
+    {
+      "dimension_id": "bundling_or_misleading",
+      "status": "adequate",
+      "explanation": "No bundling found: borrowing works the same either way.",
+      "evidence_ids": [
+        "P009"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "F01",
+      "rule_id": "CG-SH-02",
+      "rule_version": "1.0",
+      "title": "Email provider not named",
+      "severity": "low",
+      "confidence": "medium",
+      "explanation": "The recipient is limited to an email delivery provider for reminders, but the provider is not named.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P011"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P011",
+          "quote": "We share your email address with our email delivery provider only to send reminders.",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [
+        "LS-IN-DPDPA-S11"
+      ],
+      "legal_applicability_status": "verified_not_yet_in_force",
+      "legal_applicability_note": "Linked provisions are verified but scheduled to commence on 2027-05-13 (per G.S.R. 843(E)/846(E)). They are cited as context, not as a current legal obligation. ConsentGuard does not decide whether any provision applies to this organisation.",
+      "missing_context": [],
+      "recommended_action": "If it matters to you, ask which email provider is used.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F02",
+      "rule_id": "CG-CN-04",
+      "rule_version": "1.0",
+      "title": "Recommendations are a separate, optional choice",
+      "severity": "informational",
+      "confidence": "high",
+      "explanation": "Recommendations are off by default, can be switched off at any time, and borrowing works either way.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P009",
+        "C02"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P009",
+          "quote": "This is off by default and you can switch it off at any time; borrowing works the same either way.",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [],
+      "legal_applicability_status": "no_legal_reference",
+      "legal_applicability_note": "This is a governance heuristic with no linked legal source.",
+      "missing_context": [],
+      "recommended_action": "Switch recommendations on only if you want suggestions based on your borrowing history.",
+      "adjustments": []
+    },
+    {
+      "finding_id": "F03",
+      "rule_id": "CG-PO-01",
+      "rule_version": "1.0",
+      "title": "Limited data and specific purposes",
+      "severity": "informational",
+      "confidence": "high",
+      "explanation": "The app collects only what borrowing and reminders need and says it does not use borrowing history for advertising or profiling.",
+      "evidence_basis": "quoted",
+      "document_evidence_ids": [
+        "P004",
+        "P007"
+      ],
+      "quotes": [
+        {
+          "evidence_id": "P004",
+          "quote": "We collect only your name, library card number and email address",
+          "verified": true
+        },
+        {
+          "evidence_id": "P007",
+          "quote": "We do not use it for advertising or profiling.",
+          "verified": true
+        }
+      ],
+      "legal_source_ids": [],
+      "legal_applicability_status": "no_legal_reference",
+      "legal_applicability_note": "This is a governance heuristic with no linked legal source.",
+      "missing_context": [],
+      "recommended_action": "No action needed for this point.",
+      "adjustments": []
+    }
+  ],
+  "targeted_questions": [
+    {
+      "question": "Which email delivery provider sends reminders?",
+      "why_it_matters": "A minor transparency detail."
+    }
+  ],
+  "next_steps": [
+    {
+      "action": "Keep recommendations off unless you want them.",
+      "conditional": false
+    },
+    {
+      "action": "If it matters to you, ask which email provider is used.",
+      "conditional": true
+    },
+    {
+      "action": "If you need a legal determination, ask a qualified privacy or legal professional; ConsentGuard does not provide one.",
+      "conditional": false
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "P001",
+      "text": "Kitaab Library App: Privacy Notice",
+      "page": null,
+      "paragraph_index": 1,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P002",
+      "text": "SYNTHETIC DEMONSTRATION DOCUMENT: Kitaab is a fictional public-library app invented for ConsentGuard demos. This is not a real policy.",
+      "page": null,
+      "paragraph_index": 2,
+      "section": "Kitaab Library App: Privacy Notice",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P003",
+      "text": "What we collect",
+      "page": null,
+      "paragraph_index": 3,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P004",
+      "text": "We collect only your name, library card number and email address, to let you borrow e-books and receive due-date reminders.",
+      "page": null,
+      "paragraph_index": 4,
+      "section": "What we collect",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P005",
+      "text": "We do not request location, contacts, camera or microphone access.",
+      "page": null,
+      "paragraph_index": 5,
+      "section": "What we collect",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P006",
+      "text": "How we use it",
+      "page": null,
+      "paragraph_index": 6,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P007",
+      "text": "Your borrowing history is used only to show your current loans and send due-date reminders. We do not use it for advertising or profiling.",
+      "page": null,
+      "paragraph_index": 7,
+      "section": "How we use it",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P008",
+      "text": "Optional reading recommendations",
+      "page": null,
+      "paragraph_index": 8,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P009",
+      "text": "If you switch on \"Recommendations\" in Settings, we use your borrowing history to suggest books. This is off by default and you can switch it off at any time; borrowing works the same either way.",
+      "page": null,
+      "paragraph_index": 9,
+      "section": "Optional reading recommendations",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P010",
+      "text": "Sharing",
+      "page": null,
+      "paragraph_index": 10,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P011",
+      "text": "We share your email address with our email delivery provider only to send reminders. We do not sell or share your data for marketing.",
+      "page": null,
+      "paragraph_index": 11,
+      "section": "Sharing",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P012",
+      "text": "Retention",
+      "page": null,
+      "paragraph_index": 12,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P013",
+      "text": "Loan records are deleted 30 days after a book is returned. If you close your account, your remaining data is deleted within 30 days.",
+      "page": null,
+      "paragraph_index": 13,
+      "section": "Retention",
+      "source": "document"
+    },
+    {
+      "evidence_id": "P014",
+      "text": "Withdrawal and contact",
+      "page": null,
+      "paragraph_index": 14,
+      "section": null,
+      "source": "document"
+    },
+    {
+      "evidence_id": "P015",
+      "text": "You can withdraw consent for recommendations in Settings > Recommendations, as easily as you turned it on. For any privacy question or complaint, contact our Grievance Officer at grievance@kitaab.example. We reply within 7 working days.",
+      "page": null,
+      "paragraph_index": 15,
+      "section": "Withdrawal and contact",
+      "source": "document"
+    },
+    {
+      "evidence_id": "C01",
+      "text": "Recommendations: Off (switch).",
+      "page": null,
+      "paragraph_index": 1,
+      "section": null,
+      "source": "consent_screen"
+    },
+    {
+      "evidence_id": "C02",
+      "text": "Switch on to get book suggestions based on your borrowing history. You can switch this off at any time in Settings. Borrowing works the same either way.",
+      "page": null,
+      "paragraph_index": 2,
+      "section": null,
+      "source": "consent_screen"
+    }
+  ],
+  "legal_sources": [
+    {
+      "source_id": "LS-IN-DPDPA-COMMENCE",
+      "jurisdiction": "IN",
+      "source_type": "gazette_notification",
+      "title": "Notification G.S.R. 843(E) appointing commencement dates for the Digital Personal Data Protection Act, 2023",
+      "issuing_authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "official_url": "https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf",
+      "provision": "Paragraphs (a)-(c): phased commencement",
+      "publication_date": "2025-11-13",
+      "effective_date": "2025-11-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "On publication: s.1(2), s.2, ss.18-26, s.35, ss.38-43, s.44(1) and (3). One year after publication: s.6(9) and s.27(1)(d). Eighteen months after publication: ss.3-5, s.6(1)-(8) and (10), ss.7-17, s.27 (except (1)(d)), ss.28-34, 36, 37 and s.44(2).",
+      "applicability_notes": "Controls which DPDP Act duties are in force on a given date."
+    },
+    {
+      "source_id": "LS-IN-DPDPA-S11",
+      "jurisdiction": "IN",
+      "source_type": "statute",
+      "title": "Digital Personal Data Protection Act, 2023, section 11 - Right to access information",
+      "issuing_authority": "Parliament of India; text hosted by MeitY",
+      "official_url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "provision": "Section 11(1)",
+      "publication_date": "2023-08-11",
+      "effective_date": "2027-05-13",
+      "verification_status": "verified",
+      "retrieval_date": "2026-10-08",
+      "summary": "A Data Principal who gave consent may request a summary of personal data processed and the identities of other Data Fiduciaries and Data Processors with whom it was shared.",
+      "applicability_notes": "Commences eighteen months after G.S.R. 843(E)."
+    }
+  ],
+  "last_verification_date": "2026-10-08",
+  "rule_set_version": "1.0.0",
+  "limitations": [
+    "ConsentGuard explains and assesses the supplied text only. It does not know whether the organisation actually follows its policy.",
+    "This is a consumer-education prototype, not legal advice, a compliance certification, or a security scan.",
+    "Severity and confidence labels are prototype governance heuristics, not statutory classifications.",
+    "A privacy notice alone cannot show how a consent screen behaves (for example, whether boxes are pre-ticked).",
+    "Legal sources are limited to the India registry verified on the date shown; laws and commencement dates can change."
+  ],
+  "skills_run": [
+    {
+      "skill": "document-intake",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "15 paragraphs; parse quality good."
+    },
+    {
+      "skill": "evidence-extraction",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "plain-language-explanation",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "purpose-proportionality",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "consent-design-review",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "user-action-plan",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "fixture",
+      "note": "Pre-authored demonstration output, validated by the same pipeline as live mode."
+    },
+    {
+      "skill": "jurisdiction-check",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "Legal sources attached from registry only."
+    },
+    {
+      "skill": "findings-prioritization",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "0 finding(s) adjusted by rule caps."
+    },
+    {
+      "skill": "report-and-qa",
+      "version": "1.0.0",
+      "status": "success",
+      "executor": "code",
+      "note": "3 validation check(s) recorded."
+    }
+  ],
+  "validation": [
+    {
+      "check": "all finding evidence IDs exist",
+      "passed": true,
+      "detail": "5 reference(s) checked."
+    },
+    {
+      "check": "all retained quotes verified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "legal sources come from registry",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

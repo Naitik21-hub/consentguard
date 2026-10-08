@@ -1,0 +1,54 @@
+{
+  "document_title": "Kitaab Library App: Privacy Notice (synthetic)",
+  "document_version": "Synthetic v2 (2026)",
+  "plain_english_summary": {
+    "data_collected": [
+      {"text": "Only your name, library card number and email address. No location, contacts, camera or microphone access.", "basis": "stated", "evidence_ids": ["P004", "P005"]},
+      {"text": "Borrowing history.", "basis": "stated", "evidence_ids": ["P007"]}
+    ],
+    "purposes": [
+      {"text": "Borrowing e-books, showing current loans and sending due-date reminders. Not used for advertising or profiling.", "basis": "stated", "evidence_ids": ["P004", "P007"]},
+      {"text": "Optional book recommendations, only if you switch them on.", "basis": "stated", "evidence_ids": ["P009"]}
+    ],
+    "recipients": [
+      {"text": "An email delivery provider, only to send reminders. Data is not sold or shared for marketing.", "basis": "stated", "evidence_ids": ["P011"]}
+    ],
+    "retention": [
+      {"text": "Loan records are deleted 30 days after return; remaining data within 30 days of closing your account.", "basis": "stated", "evidence_ids": ["P013"]}
+    ],
+    "choices_and_withdrawal": [
+      {"text": "Recommendations are off by default and can be switched off in Settings as easily as they were switched on. A grievance officer is named.", "basis": "stated", "evidence_ids": ["P009", "P015", "C01", "C02"]}
+    ],
+    "unknowns": [
+      "Which email delivery provider is used.",
+      "Whether the app behaves as the notice describes (ConsentGuard cannot check this)."
+    ]
+  },
+  "data_inventory": [
+    {"data_category": "Name, library card number, email", "collection_basis": "stated", "purpose": "Borrowing and due-date reminders", "recipients": "Email delivery provider (email only)", "retention": "Within 30 days of account closure", "evidence_ids": ["P004", "P011", "P013"]},
+    {"data_category": "Borrowing history", "collection_basis": "stated", "purpose": "Current loans, reminders; optional recommendations", "recipients": null, "retention": "Loan records deleted 30 days after return", "evidence_ids": ["P007", "P009", "P013"]}
+  ],
+  "permission_purpose_map": [
+    {"permission": "Location, contacts, camera, microphone", "feature": "None needed", "scope": "Not requested", "required_status": "unknown", "assessment": "proportionate", "rationale": "The notice says these permissions are not requested, which fits a library app.", "alternatives": [], "evidence_ids": ["P005"]}
+  ],
+  "consent_dimensions": [
+    {"dimension_id": "purpose_clarity", "status": "adequate", "explanation": "Each data item is tied to a specific purpose.", "evidence_ids": ["P004", "P007"]},
+    {"dimension_id": "optional_separation", "status": "adequate", "explanation": "Recommendations are separate from borrowing.", "evidence_ids": ["P009"]},
+    {"dimension_id": "choice_granularity", "status": "adequate", "explanation": "The optional use has its own switch.", "evidence_ids": ["P009", "C01"]},
+    {"dimension_id": "affirmative_action", "status": "adequate", "explanation": "The supplied consent-screen text shows recommendations off by default, with a switch to turn them on.", "evidence_ids": ["C01", "C02"]},
+    {"dimension_id": "withdrawal", "status": "adequate", "explanation": "Withdrawal is in Settings and described as being as easy as switching on.", "evidence_ids": ["P015", "C02"]},
+    {"dimension_id": "recipient_retention_transparency", "status": "adequate", "explanation": "The recipient type and retention periods are stated.", "evidence_ids": ["P011", "P013"]},
+    {"dimension_id": "bundling_or_misleading", "status": "adequate", "explanation": "No bundling found: borrowing works the same either way.", "evidence_ids": ["P009"]}
+  ],
+  "findings": [
+    {"rule_id": "CG-PO-01", "severity": "informational", "confidence": "high", "title": "Limited data and specific purposes", "explanation": "The app collects only what borrowing and reminders need and says it does not use borrowing history for advertising or profiling.", "evidence_ids": ["P004", "P007"], "quotes": [{"evidence_id": "P004", "quote": "We collect only your name, library card number and email address"}, {"evidence_id": "P007", "quote": "We do not use it for advertising or profiling."}], "missing_context": [], "recommended_action": "No action needed for this point."},
+    {"rule_id": "CG-CN-04", "severity": "informational", "confidence": "high", "title": "Recommendations are a separate, optional choice", "explanation": "Recommendations are off by default, can be switched off at any time, and borrowing works either way.", "evidence_ids": ["P009", "C02"], "quotes": [{"evidence_id": "P009", "quote": "This is off by default and you can switch it off at any time; borrowing works the same either way."}], "missing_context": [], "recommended_action": "Switch recommendations on only if you want suggestions based on your borrowing history."},
+    {"rule_id": "CG-SH-02", "severity": "low", "confidence": "medium", "title": "Email provider not named", "explanation": "The recipient is limited to an email delivery provider for reminders, but the provider is not named.", "evidence_ids": ["P011"], "quotes": [{"evidence_id": "P011", "quote": "We share your email address with our email delivery provider only to send reminders."}], "missing_context": [], "recommended_action": "If it matters to you, ask which email provider is used."}
+  ],
+  "targeted_questions": [
+    {"question": "Which email delivery provider sends reminders?", "why_it_matters": "A minor transparency detail."}
+  ],
+  "next_steps": [
+    {"action": "Keep recommendations off unless you want them.", "conditional": false}
+  ]
+}

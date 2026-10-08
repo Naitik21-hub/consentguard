@@ -1,0 +1,44 @@
+{
+  "document_title": "ShopEase privacy excerpt (synthetic)",
+  "document_version": null,
+  "plain_english_summary": {
+    "data_collected": [
+      {"text": "Name, phone number and delivery address.", "basis": "stated", "evidence_ids": ["P002"]},
+      {"text": "Payment details, handled by a payment provider.", "basis": "stated", "evidence_ids": ["P003"]}
+    ],
+    "purposes": [
+      {"text": "Delivering orders, contacting you about delivery, and completing payments.", "basis": "stated", "evidence_ids": ["P002", "P003"]}
+    ],
+    "recipients": [
+      {"text": "A payment provider processes payment details.", "basis": "stated", "evidence_ids": ["P003"]}
+    ],
+    "retention": [],
+    "choices_and_withdrawal": [],
+    "unknowns": [
+      "Retention: not in this excerpt.",
+      "Withdrawal and choices: not in this excerpt.",
+      "Other recipients, marketing use and permissions: not in this excerpt.",
+      "Contact for privacy questions: not in this excerpt."
+    ]
+  },
+  "data_inventory": [
+    {"data_category": "Name, phone number, delivery address", "collection_basis": "stated", "purpose": "Deliver orders and contact about delivery", "recipients": null, "retention": null, "evidence_ids": ["P002"]},
+    {"data_category": "Payment details", "collection_basis": "stated", "purpose": "Complete purchase", "recipients": "Payment provider", "retention": null, "evidence_ids": ["P003"]}
+  ],
+  "permission_purpose_map": [],
+  "consent_dimensions": [
+    {"dimension_id": "purpose_clarity", "status": "adequate", "explanation": "The purposes in the excerpt are specific and linked to delivery and payment.", "evidence_ids": ["P002", "P003"]}
+  ],
+  "findings": [
+    {"rule_id": "CG-RT-01", "severity": "medium", "confidence": "medium", "title": "Retention not stated in this excerpt", "explanation": "The excerpt does not say how long data is kept. This may be covered elsewhere in the full policy.", "evidence_ids": [], "quotes": [], "missing_context": ["The full privacy policy"], "recommended_action": "Find the full ShopEase policy and check its retention section."},
+    {"rule_id": "CG-CN-02", "severity": "medium", "confidence": "medium", "title": "Withdrawal not described in this excerpt", "explanation": "The excerpt does not explain choices or withdrawal. This may be covered elsewhere.", "evidence_ids": [], "quotes": [], "missing_context": ["The full privacy policy", "The app's settings"], "recommended_action": "Check the full policy and app settings for choices and withdrawal."},
+    {"rule_id": "CG-PO-01", "severity": "informational", "confidence": "medium", "title": "Data in the excerpt is tied to delivery and payment", "explanation": "The data listed matches what an order and delivery would normally need.", "evidence_ids": ["P002"], "quotes": [{"evidence_id": "P002", "quote": "so that we can deliver your orders and contact you about delivery"}], "missing_context": [], "recommended_action": "No action needed for this point."}
+  ],
+  "targeted_questions": [
+    {"question": "How long does ShopEase keep my address and phone number after delivery?", "why_it_matters": "Not stated in the excerpt."},
+    {"question": "Is my data used for marketing, and how can I opt out?", "why_it_matters": "Marketing use is not covered in the excerpt."}
+  ],
+  "next_steps": [
+    {"action": "Get the complete ShopEase privacy policy and run ConsentGuard on it.", "conditional": false}
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "document_title": "Sahyog Digital Bank: Customer Privacy Notice (synthetic)",
+  "document_version": null,
+  "plain_english_summary": {
+    "data_collected": [
+      {"text": "Identity and KYC details: name, date of birth, address, PAN, photograph and identity documents.", "basis": "stated", "evidence_ids": ["P004"]},
+      {"text": "Transaction records.", "basis": "stated", "evidence_ids": ["P005"]}
+    ],
+    "purposes": [
+      {"text": "KYC checks that the bank says are required by law and banking regulations, and running the account you asked for.", "basis": "stated", "evidence_ids": ["P004"]},
+      {"text": "Fraud prevention and legal reporting.", "basis": "stated", "evidence_ids": ["P005"]},
+      {"text": "Offering you products from the bank and 'select partners', possibly based on your transaction patterns.", "basis": "stated", "evidence_ids": ["P007"]}
+    ],
+    "recipients": [
+      {"text": "Unnamed 'select partners' may receive 'relevant information' so that they can contact you with offers.", "basis": "stated", "evidence_ids": ["P007"]}
+    ],
+    "retention": [
+      {"text": "Account and KYC records are kept for periods required by law after closure. No retention is stated for marketing use.", "basis": "stated", "evidence_ids": ["P009"]}
+    ],
+    "choices_and_withdrawal": [
+      {"text": "A grievance contact is given. No way to refuse or withdraw from partner marketing is described.", "basis": "stated", "evidence_ids": ["P011"]}
+    ],
+    "unknowns": [
+      "Who the 'select partners' are and what 'relevant information' includes.",
+      "Whether partner marketing is optional and how to opt out.",
+      "How long data used for marketing is kept."
+    ]
+  },
+  "data_inventory": [
+    {"data_category": "KYC data (name, date of birth, address, PAN, photograph, ID documents)", "collection_basis": "stated", "purpose": "KYC and account services", "recipients": null, "retention": "Periods required by law after account closure", "evidence_ids": ["P004", "P009"]},
+    {"data_category": "Transaction records and patterns", "collection_basis": "stated", "purpose": "Run account, prevent fraud, legal reporting; also product offers", "recipients": "Select partners (relevant information)", "retention": "Periods required by law (for account records)", "evidence_ids": ["P005", "P007", "P009"]}
+  ],
+  "permission_purpose_map": [],
+  "consent_dimensions": [
+    {"dimension_id": "purpose_clarity", "status": "concern", "explanation": "Account purposes are clear; the marketing purpose ('suitable offers', 'relevant information') is vague.", "evidence_ids": ["P004", "P007"]},
+    {"dimension_id": "optional_separation", "status": "concern", "explanation": "Partner marketing appears in the same notice as essential account processing, and the text does not say it is optional.", "evidence_ids": ["P007"]},
+    {"dimension_id": "choice_granularity", "status": "unknown", "explanation": "No separate choices are described in the notice; the account-opening screen was not supplied.", "evidence_ids": []},
+    {"dimension_id": "affirmative_action", "status": "unknown", "explanation": "Cannot be assessed from the notice alone.", "evidence_ids": []},
+    {"dimension_id": "withdrawal", "status": "concern", "explanation": "Only a grievance contact is given; no withdrawal or opt-out route for marketing is described.", "evidence_ids": ["P011"]},
+    {"dimension_id": "recipient_retention_transparency", "status": "concern", "explanation": "Partners are unnamed. Retention is tied to legal periods for account records but not stated for marketing.", "evidence_ids": ["P007", "P009"]},
+    {"dimension_id": "bundling_or_misleading", "status": "unknown", "explanation": "The text does not show whether marketing is a condition of opening an account.", "evidence_ids": []}
+  ],
+  "findings": [
+    {"rule_id": "CG-LG-01", "severity": "informational", "confidence": "high", "title": "KYC and account processing are described as legally required", "explanation": "The bank says KYC data is needed for checks required by law and to run the account you asked for. Processing of this kind may not depend on your consent, so declining marketing would not normally stop it.", "evidence_ids": ["P004", "P005"], "quotes": [{"evidence_id": "P004", "quote": "Know Your Customer (KYC) checks required by law and banking regulations"}], "missing_context": [], "recommended_action": "Expect KYC processing if you open the account; ask the bank which processing depends on your consent."},
+    {"rule_id": "CG-SH-02", "severity": "medium", "confidence": "high", "title": "Partner marketing recipients and data are vague", "explanation": "'Select partners' and 'relevant information' do not tell you who receives your data or what is shared, even though transaction patterns may be used.", "evidence_ids": ["P007"], "quotes": [{"evidence_id": "P007", "quote": "may share relevant information with such partners to enable them to contact you with suitable offers"}], "missing_context": ["A list of partner categories", "Whether this sharing is optional"], "recommended_action": "Ask the bank which partners receive which information, and whether you can open and use the account without partner marketing."},
+    {"rule_id": "CG-PP-04", "severity": "medium", "confidence": "medium", "title": "Marketing use of transaction patterns is loosely described", "explanation": "Using transaction patterns for offers goes beyond running the account, and 'suitable offers' does not explain what analysis is done.", "evidence_ids": ["P007"], "quotes": [{"evidence_id": "P007", "quote": "including your transaction patterns, to offer you products from Sahyog and our select partners"}], "missing_context": ["The account-opening consent screen"], "recommended_action": "Ask whether your transaction patterns are used for offers only with your separate agreement."},
+    {"rule_id": "CG-CN-02", "severity": "medium", "confidence": "medium", "title": "No opt-out or withdrawal route for marketing described", "explanation": "The complete notice gives a grievance contact but no way to say no to, or withdraw from, partner marketing.", "evidence_ids": [], "quotes": [], "missing_context": ["Net-banking or app settings may offer an opt-out not mentioned here"], "recommended_action": "Look in net-banking or app settings for marketing preferences; otherwise ask the grievance officer how to opt out."}
+  ],
+  "targeted_questions": [
+    {"question": "Is partner marketing optional, and can I open the account without agreeing to it?", "why_it_matters": "Separates essential banking from optional marketing."},
+    {"question": "Which partners receive my information, and what exactly is shared?", "why_it_matters": "Transaction patterns can reveal a lot about your life."},
+    {"question": "How do I opt out of marketing and partner sharing later?", "why_it_matters": "Withdrawal should be possible without closing the account."}
+  ],
+  "next_steps": [
+    {"action": "Do not expect to avoid KYC processing; it is described as legally required.", "conditional": false},
+    {"action": "If the account form or app offers a marketing or partner-sharing choice, decline it unless you want partner offers.", "conditional": true}
+  ]
+}

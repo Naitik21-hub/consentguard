@@ -1,0 +1,99 @@
+{
+  "$defs": {
+    "Quote": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "quote"
+      ],
+      "title": "Quote",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "rule_id": {
+      "title": "Rule Id",
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "informational"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "explanation": {
+      "title": "Explanation",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "quotes": {
+      "items": {
+        "$ref": "#/$defs/Quote"
+      },
+      "title": "Quotes",
+      "type": "array"
+    },
+    "missing_context": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Context",
+      "type": "array"
+    },
+    "recommended_action": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Recommended Action"
+    }
+  },
+  "required": [
+    "rule_id",
+    "severity",
+    "confidence",
+    "title",
+    "explanation"
+  ],
+  "title": "DraftFinding",
+  "type": "object"
+}
