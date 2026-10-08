@@ -110,7 +110,7 @@ These formats follow Anthropic's published Agent Skills format, which was checke
 | `tests/` | Deterministic tests (104 passing on 2026-10-08) |
 | `vercel_app.py`, `pyproject.toml`, `vercel.json` | Hosted deployment on Vercel (demo-only by default; see `docs/deployment.md`) |
 | `evaluation/` | Optional live-model evaluation script and rubric |
-| `docs/` | Product brief, architecture, privacy, source verification, evaluation, demo script, presentation notes |
+| `docs/` | Two-page white paper (PDF), product brief, architecture, privacy, source verification, evaluation, demo script, presentation notes, deployment |
 
 ## 7. Known limits
 
