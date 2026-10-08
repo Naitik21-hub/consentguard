@@ -61,19 +61,29 @@ def reset_session() -> None:
 
 init_state()
 
+# Hosted deployments (Vercel sets VERCEL=1) are demo-only unless explicitly unlocked.
+HOSTED = os.environ.get("VERCEL") == "1"
+LIVE_ALLOWED = (not HOSTED) or os.environ.get("CONSENTGUARD_ALLOW_LIVE") == "1"
+
 # ---------------------------------------------------------------------------
 # Sidebar: mode, limits, reset
 # ---------------------------------------------------------------------------
 with st.sidebar:
     st.title("ConsentGuard")
     st.caption("Understand what you are agreeing to.")
+    mode_options = ["Demo mode (no API key, synthetic examples)"]
+    if LIVE_ALLOWED:
+        mode_options.append("Live mode (sends text to Anthropic's API)")
     mode_label = st.radio(
         "Mode",
-        ["Demo mode (no API key, synthetic examples)", "Live mode (sends text to Anthropic's API)"],
+        mode_options,
         help="Demo mode replays pre-authored analyses of synthetic documents through the real validation pipeline. "
         "Live mode calls Claude on text you supply, after you preview and confirm.",
     )
     mode = "live" if mode_label.startswith("Live") else "demo"
+    if not LIVE_ALLOWED:
+        st.caption("This hosted copy is demo-only: it never sends text to an AI provider. "
+                   "To analyse your own documents, run ConsentGuard on your own computer (see the README).")
     if mode == "live":
         if api_key_present():
             st.success(f"API key found. Model: `{configured_model()}`")
@@ -135,7 +145,8 @@ def run_demo_scenario(sid: str) -> None:
 with tab_analyze:
     if mode == "demo":
         st.info("You are in **Demo mode**. Pick a synthetic example below (or in the Demo examples tab). "
-                "To analyze your own text, switch to Live mode in the sidebar.")
+                + ("To analyze your own text, switch to Live mode in the sidebar." if LIVE_ALLOWED
+                   else "This hosted copy is demo-only; run it locally to analyze your own text."))
         options = {s["title"]: s["id"] for s in list_scenarios()}
         choice = st.selectbox("Synthetic example", list(options.keys()))
         if st.button("Run demo analysis", type="primary"):

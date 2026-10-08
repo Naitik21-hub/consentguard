@@ -102,3 +102,25 @@ def test_app_demo_tab_keeps_report_and_followup_document_in_sync():
     next(b for b in at.button if b.label == "Ask").click().run()
     assert "P014" in at.session_state["qa"][0].evidence_ids
     assert not at.exception
+
+
+def test_hosted_deployment_is_demo_only_by_default(monkeypatch):
+    """On Vercel (VERCEL=1) live mode must not be offered unless explicitly unlocked."""
+    from streamlit.testing.v1 import AppTest
+
+    monkeypatch.setenv("VERCEL", "1")
+    monkeypatch.delenv("CONSENTGUARD_ALLOW_LIVE", raising=False)
+    at = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60)
+    at.run()
+    assert [o for o in at.sidebar.radio[0].options if o.startswith("Live")] == []
+    monkeypatch.setenv("CONSENTGUARD_ALLOW_LIVE", "1")
+    at2 = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60)
+    at2.run()
+    assert any(o.startswith("Live") for o in at2.sidebar.radio[0].options)
+
+
+def test_vercel_entrypoint_exposes_asgi_app():
+    import importlib
+
+    mod = importlib.import_module("vercel_app")
+    assert callable(mod.app)

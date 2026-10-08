@@ -107,7 +107,8 @@ These formats follow Anthropic's published Agent Skills format, which was checke
 | `rules/legal_sources.json` | **Canonical** legal source registry (verified 2026-10-08) |
 | `schemas/` | JSON Schemas generated from the models (`python -m src.export_schemas`) |
 | `examples/` | Eight synthetic policies, fixture drafts, expected outcomes, reference reports |
-| `tests/` | Deterministic tests (102 passing on 2026-10-08) |
+| `tests/` | Deterministic tests (104 passing on 2026-10-08) |
+| `vercel_app.py`, `pyproject.toml`, `vercel.json` | Hosted deployment on Vercel (demo-only by default; see `docs/deployment.md`) |
 | `evaluation/` | Optional live-model evaluation script and rubric |
 | `docs/` | Product brief, architecture, privacy, source verification, evaluation, demo script, presentation notes |
 
